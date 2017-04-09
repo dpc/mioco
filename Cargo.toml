@@ -1,0 +1,10 @@
+[package]
+name = "miofib"
+version = "0.1.0"
+authors = ["Dawid Ciężarkiewicz <dpc@dpc.pw>"]
+
+[dependencies]
+mio = "0.6.6"
+lazy_static = "*"
+context = "1"
+boxfnonce = "*"
