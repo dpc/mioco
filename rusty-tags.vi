@@ -1,7 +1,10 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
 A	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^        struct A<'a>(&'a mut bool);$/;"	s
+ASCII_LOWERCASE_MAP	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^static ASCII_LOWERCASE_MAP: [u8; 256] =$/;"	c
 AWAKEN	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const AWAKEN: Token = Token(usize::MAX);$/;"	c
+AnyTerminal	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^enum AnyTerminal {$/;"	g
+AsFmtSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^struct AsFmtSerializer<F>(pub F)$/;"	s
 AsRawFd for Io	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/io.rs	/^impl AsRawFd for Io {$/;"	i
 AsRawFd for PipeReader	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl AsRawFd for PipeReader {$/;"	i
 AsRawFd for PipeWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl AsRawFd for PipeWriter {$/;"	i
@@ -16,6 +19,18 @@ AsRawFd for UnixListener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec8
 AsRawFd for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl AsRawFd for UnixSocket {$/;"	i
 AsRawFd for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^impl AsRawFd for UnixSocket {$/;"	i
 AsRawFd for UnixStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl AsRawFd for UnixStream {$/;"	i
+Async	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Async {$/;"	i
+Async	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub struct Async {$/;"	s
+AsyncBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl<D> AsyncBuilder<D>$/;"	i
+AsyncBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub struct AsyncBuilder<D>$/;"	s
+AsyncCore	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl AsyncCore {$/;"	i
+AsyncCore	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub struct AsyncCore {$/;"	s
+AsyncCoreBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl<D> AsyncCoreBuilder<D>$/;"	i
+AsyncCoreBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub struct AsyncCoreBuilder<D>$/;"	s
+AsyncError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub enum AsyncError {$/;"	g
+AsyncMsg	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^enum AsyncMsg {$/;"	g
+AsyncRecord	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^struct AsyncRecord {$/;"	s
+AsyncResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub type AsyncResult<T> = std::result::Result<T, AsyncError>;$/;"	T
 AtomicState	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl AtomicState {$/;"	i
 AtomicState	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^struct AtomicState {$/;"	s
 Awakener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/awakener.rs	/^    impl Awakener {$/;"	i
@@ -25,12 +40,14 @@ Awakener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src
 AwakenerInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/awakener.rs	/^struct AwakenerInner {$/;"	s
 Binding	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^impl Binding {$/;"	i
 Binding	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^pub struct Binding {$/;"	s
+BorrowedKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct BorrowedKV<'a>(\/\/\/ The exact details of it function are not$/;"	s
 BoxFnOnce	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^impl<Args, Result> BoxFnOnce<Args, Result> {$/;"	i
 BoxFnOnce	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^pub struct BoxFnOnce<Arguments, Result = ()> (Box<FnBox<Arguments, Result>>);$/;"	s
 BufferPool	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/buffer_pool.rs	/^impl BufferPool {$/;"	i
 BufferPool	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/buffer_pool.rs	/^pub struct BufferPool {$/;"	s
 Builder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^impl Builder {$/;"	i
 Builder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^pub struct Builder {$/;"	s
+CheckOwned	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^        struct CheckOwned;$/;"	s
 Clone for FromRawArc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^impl<T> Clone for FromRawArc<T> {$/;"	i
 Clone for RegistrationInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Clone for RegistrationInner {$/;"	i
 Clone for SelectorId	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Clone for SelectorId {$/;"	i
@@ -39,12 +56,25 @@ Clone for Sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0
 Clone for SenderCtl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl Clone for SenderCtl {$/;"	i
 Clone for SyncSender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> Clone for SyncSender<T> {$/;"	i
 Cmsg	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^            struct Cmsg {$/;"	s
+CompactFormat	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<D> CompactFormat<D>$/;"	i
+CompactFormat	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct CompactFormat<D>$/;"	s
+CompactFormatBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<D> CompactFormatBuilder<D>$/;"	i
+CompactFormatBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct CompactFormatBuilder<D>$/;"	s
+CompactFormatSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> CompactFormatSerializer<'a> {$/;"	i
+CompactFormatSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^struct CompactFormatSerializer<'a> {$/;"	s
 Config	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^struct Config {$/;"	s
 Context	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^impl Context {$/;"	i
 Context	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^pub struct Context(&'static c_void);$/;"	s
 ContextFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^pub type ContextFn = extern "C" fn(t: Transfer) -> !;$/;"	T
+CountingWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> CountingWriter<'a> {$/;"	i
+CountingWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^struct CountingWriter<'a> {$/;"	s
 DROPPED_MASK	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const DROPPED_MASK: usize = 1 << DROPPED_SHIFT;$/;"	c
 DROPPED_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const DROPPED_SHIFT: usize = 17;$/;"	c
+Decorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub trait Decorator {$/;"	t
+Decorator for Box	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<T: ?Sized> Decorator for Box<T>$/;"	i
+Decorator for PlainDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> Decorator for PlainDecorator<W>$/;"	i
+Decorator for PlainSyncDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> Decorator for PlainSyncDecorator<W>$/;"	i
+Decorator for TermDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl Decorator for TermDecorator {$/;"	i
 Default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^impl<'a> Default for &'a IoVec {$/;"	i
 Default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^impl<'a> Default for &'a mut IoVec {$/;"	i
 Default for Builder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^impl Default for Builder {$/;"	i
@@ -56,12 +86,35 @@ Dequeue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/
 Deref for FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Deref for FixedSizeStack {$/;"	i
 Deref for FromRawArc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^impl<T> Deref for FromRawArc<T> {$/;"	i
 Deref for ProtectedFixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Deref for ProtectedFixedSizeStack {$/;"	i
+Discard	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct Discard;$/;"	s
 DlSym	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/dlsym.rs	/^impl<F> DlSym<F> {$/;"	i
 DlSym	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/dlsym.rs	/^pub struct DlSym<F> {$/;"	s
+Drain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait Drain {$/;"	t
+Drain for Arc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain + ?Sized> Drain for Arc<D> {$/;"	i
+Drain for Async	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Drain for Async {$/;"	i
+Drain for AsyncCore	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Drain for AsyncCore {$/;"	i
+Drain for Box	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain + ?Sized> Drain for Box<D> {$/;"	i
+Drain for CheckOwned	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^        impl Drain for CheckOwned {$/;"	i
+Drain for CompactFormat	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<D> Drain for CompactFormat<D>$/;"	i
+Drain for Discard	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl Drain for Discard {$/;"	i
+Drain for Duplicate	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D1: Drain, D2: Drain> Drain for Duplicate<D1, D2> {$/;"	i
+Drain for Filter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain, F> Drain for Filter<D, F>$/;"	i
+Drain for FullFormat	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<D> Drain for FullFormat<D>$/;"	i
+Drain for Fuse	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> Drain for Fuse<D>$/;"	i
+Drain for IgnoreResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> Drain for IgnoreResult<D> {$/;"	i
+Drain for LevelFilter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> Drain for LevelFilter<D> {$/;"	i
+Drain for Logger	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D> Drain for Logger<D>$/;"	i
+Drain for MapError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain, E> Drain for MapError<D, E> {$/;"	i
+Drain for std	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> Drain for std::sync::Mutex<D> {$/;"	i
 Drop for A	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^        impl<'a> Drop for A<'a> {$/;"	i
+Drop for Async	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Drop for Async {$/;"	i
+Drop for AsyncCore	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Drop for AsyncCore {$/;"	i
 Drop for FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Drop for FixedSizeStack {$/;"	i
 Drop for FromRawArc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^impl<T> Drop for FromRawArc<T> {$/;"	i
+Drop for PlainRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a, W> Drop for PlainRecordDecorator<'a, W>$/;"	i
+Drop for PlainSyncRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> Drop for PlainSyncRecordDecorator<W>$/;"	i
 Drop for ProtectedFixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Drop for ProtectedFixedSizeStack {$/;"	i
+Drop for PushFnSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a> Drop for PushFnSerializer<'a> {$/;"	i
 Drop for ReadinessQueueInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Drop for ReadinessQueueInner {$/;"	i
 Drop for Registration	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Drop for Registration {$/;"	i
 Drop for RegistrationInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Drop for RegistrationInner {$/;"	i
@@ -70,7 +123,10 @@ Drop for Selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-
 Drop for SenderCtl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl Drop for SenderCtl {$/;"	i
 Drop for TcpListener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^impl Drop for TcpListener {$/;"	i
 Drop for TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^impl Drop for TcpStream {$/;"	i
+Drop for TermRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> Drop for TermRecordDecorator<'a> {$/;"	i
 Drop for UdpSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^impl Drop for UdpSocket {$/;"	i
+Duplicate	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D1: Drain, D2: Drain> Duplicate<D1, D2> {$/;"	i
+Duplicate	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct Duplicate<D1: Drain, D2: Drain>(pub D1, pub D2);$/;"	s
 EMPTY	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^const EMPTY: Token = Token(usize::MAX);$/;"	c
 EPOLLONESHOT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^const EPOLLONESHOT: libc::c_int = 0x40000000;$/;"	c
 EPOLLRDHUP	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^const EPOLLRDHUP: libc::c_int = 0x00002000;$/;"	c
@@ -78,7 +134,19 @@ ERROR	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/ev
 ERROR	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/ready.rs	/^const ERROR: usize = 0b0100;$/;"	c
 Entry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^impl<T> Entry<T> {$/;"	i
 Entry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^struct Entry<T> {$/;"	s
+Entry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^pub struct Entry<'a, T: 'a, I: 'a> {$/;"	s
 EntryLinks	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^struct EntryLinks {$/;"	s
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err = ();$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err = (result::Result<D1::Ok, D1::Err>, result::Result<D2::Ok, D2::Err>);$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err = D::Err;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err = E;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err = MutexDrainError<D>;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err = Never;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Err;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^            type Err = Never;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    type Err = AsyncError;$/;"	T
+Err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    type Err = io::Error;$/;"	T
+Error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub enum Error {$/;"	g
 Event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^impl Event {$/;"	i
 Event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^pub struct Event {$/;"	s
 EventLoop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^impl<H: Handler> EventLoop<H> {$/;"	i
@@ -124,9 +192,19 @@ FILE_SKIP_SET_EVENT_ON_HANDLE	/home/dpc/.cargo/registry/src/github.com-1ecc6299d
 Family	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^enum Family {$/;"	g
 Fiber	/home/dpc/lab/rust/miofib/src/lib.rs	/^impl Fiber {$/;"	i
 Fiber	/home/dpc/lab/rust/miofib/src/lib.rs	/^struct Fiber {$/;"	s
+Filter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain, F> Filter<D, F>$/;"	i
+Filter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct Filter<D: Drain, F>(pub D, pub F)$/;"	s
+FilterFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait FilterFn$/;"	t
+FilterFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait FilterFn: 'static + Sync + Send + Fn(&Record) -> bool {}$/;"	t
+FilterFn for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> FilterFn for T$/;"	i
+FilterLevel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl FilterLevel {$/;"	i
+FilterLevel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub enum FilterLevel {$/;"	g
 FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl FixedSizeStack {$/;"	i
 FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^pub struct FixedSizeStack(Stack);$/;"	s
 FnBox	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/traits.rs	/^pub trait FnBox<Arguments, Result> {$/;"	t
+FnValue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct FnValue<V: 'static + Value, F>(pub F)$/;"	s
+Foo	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    impl Foo {$/;"	i
+Foo	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    struct Foo;$/;"	s
 From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^impl<'a> From<&'a [u8]> for &'a IoVec {$/;"	i
 From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^impl<'a> From<&'a mut [u8]> for &'a mut IoVec {$/;"	i
 From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/sys/unix.rs	/^impl<'a> From<&'a [u8]> for &'a IoVec {$/;"	i
@@ -137,6 +215,13 @@ From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/cha
 From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> From<mpsc::SendError<T>> for TrySendError<T> {$/;"	i
 From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> From<mpsc::TrySendError<T>> for TrySendError<T> {$/;"	i
 From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^impl<M> From<channel::TrySendError<M>> for NotifyError<M> {$/;"	i
+From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a, D : Drain> From<std::sync::PoisonError<std::sync::MutexGuard<'a, D>>>$/;"	i
+From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl<T> From<mpsc::TrySendError<T>> for AsyncError {$/;"	i
+From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl<T> From<std::sync::PoisonError<T>> for AsyncError {$/;"	i
+From	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl<T> From<std::sync::TryLockError<T>> for AsyncError {$/;"	i
+From for Error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl From<core::fmt::Error> for Error {$/;"	i
+From for Error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl From<std::io::Error> for Error {$/;"	i
+From for MyIndex	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    impl From<usize> for MyIndex {$/;"	i
 From for PipeReader	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl From<Io> for PipeReader {$/;"	i
 From for PipeWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl From<Io> for PipeWriter {$/;"	i
 From for ReadinessState	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl From<usize> for ReadinessState {$/;"	i
@@ -149,6 +234,7 @@ From for UnixReady	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio
 From for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl From<sys::UnixSocket> for UnixSocket {$/;"	i
 From for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^impl From<Io> for UnixSocket {$/;"	i
 From for UnixStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl From<sys::UnixSocket> for UnixStream {$/;"	i
+From for std	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl From<Error> for std::io::Error {$/;"	i
 From for usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl From<ReadinessState> for usize {$/;"	i
 From for usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/token.rs	/^impl From<Token> for usize {$/;"	i
 FromRawArc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^impl<T> FromRawArc<T> {$/;"	i
@@ -167,18 +253,31 @@ FromRawFd for UnixListener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9e
 FromRawFd for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl FromRawFd for UnixSocket {$/;"	i
 FromRawFd for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^impl FromRawFd for UnixSocket {$/;"	i
 FromRawFd for UnixStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl FromRawFd for UnixStream {$/;"	i
+FromStr for FilterLevel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl FromStr for FilterLevel {$/;"	i
+FromStr for Level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl FromStr for Level {$/;"	i
+FullFormat	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<D> FullFormat<D>$/;"	i
+FullFormat	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct FullFormat<D>$/;"	s
+FullFormatBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<D> FullFormatBuilder<D>$/;"	i
+FullFormatBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct FullFormatBuilder<D>$/;"	s
+Fuse	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> Fuse<D>$/;"	i
+Fuse	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct Fuse<D: Drain>(pub D) where D::Err: fmt::Debug;$/;"	s
 HUP	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^const HUP: usize      = 0b1000;$/;"	c
 HUP	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/ready.rs	/^const HUP: usize   = 0b1000;$/;"	c
 Handler	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/handler.rs	/^pub trait Handler: Sized {$/;"	t
 Handler for Nop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    impl Handler for Nop {$/;"	i
 INTEREST_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const INTEREST_SHIFT: usize = 4;$/;"	c
+IgnoreResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> IgnoreResult<D> {$/;"	i
+IgnoreResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct IgnoreResult<D: Drain> {$/;"	s
 Imp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^impl Imp {$/;"	i
 Imp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^struct Imp {$/;"	s
 Inner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^struct Inner {$/;"	s
 Inner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^struct Inner<T> {$/;"	s
 Inner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^struct Inner {$/;"	s
 Inner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^struct Inner {$/;"	s
+Into for MyIndex	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    impl Into<usize> for MyIndex {$/;"	i
 IntoIter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    type IntoIter = Iter<'a>;$/;"	T
+IntoIter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    type IntoIter = Iter<'a, T, I>;$/;"	T
+IntoIter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    type IntoIter = IterMut<'a, T, I>;$/;"	T
 IntoIterator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl<'a> IntoIterator for &'a Events {$/;"	i
 IntoRawFd for Io	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/io.rs	/^impl IntoRawFd for Io {$/;"	i
 IntoRawFd for PipeReader	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl IntoRawFd for PipeReader {$/;"	i
@@ -207,9 +306,33 @@ IsMinusOne	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 IsMinusOne for i32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^impl IsMinusOne for i32 {$/;"	i
 IsMinusOne for isize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^impl IsMinusOne for isize {$/;"	i
 Item	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    type Item = Event;$/;"	T
+Item	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    type Item = &'a T;$/;"	T
+Item	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    type Item = &'a mut T;$/;"	T
 Iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^pub struct Iter<'a> {$/;"	s
+Iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^pub struct Iter<'a, T: 'a, I: 'a> {$/;"	s
+IterMut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^pub struct IterMut<'a, T: 'a, I: 'a> {$/;"	s
 Iterator for Iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl<'a> Iterator for Iter<'a> {$/;"	i
+Iterator for Iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^impl<'a, T, I> Iterator for Iter<'a, T, I> {$/;"	i
+Iterator for IterMut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^impl<'a, T, I> Iterator for IterMut<'a, T, I> {$/;"	i
+K	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^        struct K;$/;"	s
+KV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl KV for () {$/;"	i
+KV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a, T> KV for &'a T$/;"	i
+KV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T: KV, R: KV> KV for (T, R) {$/;"	i
+KV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait KV {$/;"	t
+KV for Arc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> KV for Arc<T>$/;"	i
+KV for BorrowedKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a> KV for BorrowedKV<'a> {$/;"	i
+KV for Box	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> KV for Box<T>$/;"	i
+KV for K	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^        impl KV for K {$/;"	i
+KV for MultiListNode	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl KV for MultiListNode {$/;"	i
+KV for OwnedKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> KV for OwnedKV<T>$/;"	i
+KV for OwnedKVList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl KV for OwnedKVList {$/;"	i
+KV for OwnedKVListNode	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> KV for OwnedKVListNode<T>$/;"	i
+KV for SingleKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<V> KV for SingleKV<V>$/;"	i
 KeventList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^struct KeventList(Vec<libc::kevent>);$/;"	s
+Key	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type Key = &'static str;$/;"	T
+LOC	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^        static LOC : $crate::RecordLocation = $crate::RecordLocation {$/;"	c
+LOG_LEVEL_NAMES	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub static LOG_LEVEL_NAMES: [&'static str; 7] =$/;"	c
+LOG_LEVEL_SHORT_NAMES	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub static LOG_LEVEL_SHORT_NAMES: [&'static str; 7] =$/;"	c
 Lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/core_lazy.rs	/^impl<T: Sync> Lazy<T> {$/;"	i
 Lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/core_lazy.rs	/^pub struct Lazy<T: Sync>(Once<T>);$/;"	s
 Lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lazy.rs	/^impl<T: Sync> Lazy<T> {$/;"	i
@@ -217,10 +340,16 @@ Lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6
 Lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/nightly_lazy.rs	/^impl<T: Sync> Lazy<T> {$/;"	i
 Lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/nightly_lazy.rs	/^pub struct Lazy<T: Sync>(UnsafeCell<Option<T>>, Once);$/;"	s
 LazyStatic	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^pub trait LazyStatic {$/;"	t
+Level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl Level {$/;"	i
+Level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub enum Level {$/;"	g
+LevelFilter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> LevelFilter<D> {$/;"	i
+LevelFilter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct LevelFilter<D: Drain>(pub D, pub Level);$/;"	s
 ListenerImp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^impl ListenerImp {$/;"	i
 ListenerImp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^struct ListenerImp {$/;"	s
 ListenerInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^struct ListenerInner {$/;"	s
 ListenerIo	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^struct ListenerIo {$/;"	s
+Logger	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D> Logger<D>$/;"	i
+Logger	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct Logger<D = Arc<SendSyncRefUnwindSafeDrain<Ok = (), Err = Never>>>$/;"	s
 Loop	/home/dpc/lab/rust/miofib/src/lib.rs	/^impl Loop {$/;"	i
 Loop	/home/dpc/lab/rust/miofib/src/lib.rs	/^struct Loop {$/;"	s
 LoopMsg	/home/dpc/lab/rust/miofib/src/lib.rs	/^enum LoopMsg {$/;"	g
@@ -238,12 +367,20 @@ MAX_LENGTH	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0
 MAX_REFCOUNT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const MAX_REFCOUNT: usize = (isize::MAX) as usize;$/;"	c
 MILLIS_PER_SEC	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^    const MILLIS_PER_SEC: u64 = 1_000;$/;"	c
 MILLIS_PER_SEC	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^const MILLIS_PER_SEC: u64 = 1_000;$/;"	c
+MapErrFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait MapErrFn<EI, EO>$/;"	t
+MapErrFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait MapErrFn<EI, EO>: 'static + Sync + Send + Fn(EI) -> EO {}$/;"	t
+MapErrFn for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T, EI, EO> MapErrFn<EI, EO> for T$/;"	i
+MapError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain, E> MapError<D, E> {$/;"	i
+MapError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct MapError<D: Drain, E> {$/;"	s
 MapNonBlock	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^pub trait MapNonBlock<T> {$/;"	t
 MapNonBlock for Result	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^impl<T> MapNonBlock<T> for Result<T> {$/;"	i
 Message	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/handler.rs	/^    type Message;$/;"	T
 Message	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^        type Message = ();$/;"	T
 Miofib	/home/dpc/lab/rust/miofib/src/lib.rs	/^impl Miofib {$/;"	i
 Miofib	/home/dpc/lab/rust/miofib/src/lib.rs	/^struct Miofib {$/;"	s
+MultiListNode	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^struct MultiListNode {$/;"	s
+MutexDrainError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub enum MutexDrainError<D: Drain> {$/;"	g
+MyIndex	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub struct MyIndex(pub usize);$/;"	s
 MyInto	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^trait MyInto<T> {$/;"	t
 MyInto for usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^impl MyInto<u32> for usize {$/;"	i
 MyInto for usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^impl MyInto<usize> for usize {$/;"	i
@@ -255,18 +392,34 @@ NEXT_ID	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/
 NOTIFY	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^const NOTIFY: Token = Token(usize::MAX - 1);$/;"	c
 NULL	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^    const NULL: *mut libc::c_void = 0 as *mut libc::c_void;$/;"	c
 NULL	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^    const NULL: winapi::LPVOID = 0 as winapi::LPVOID;$/;"	c
+Never	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type Never = NeverStruct;$/;"	T
+NeverStruct	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^struct NeverStruct(());$/;"	s
 NoSendString	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^	impl NoSendString {$/;"	i
 NoSendString	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^	struct NoSendString(String, Rc<()>);$/;"	s
 Nop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    struct Nop;$/;"	s
 NotifyError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^pub enum NotifyError<T> {$/;"	g
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Ok = ();$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Ok = (D1::Ok, D2::Ok);$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Ok = D::Ok;$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Ok = Option<D::Ok>;$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    type Ok;$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^            type Ok = ();$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    type Ok = ();$/;"	T
+Ok	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    type Ok = ();$/;"	T
 OldTimerResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^pub type OldTimerResult<T> = Result<T>;$/;"	T
 Output	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/io.rs	/^    type Output;$/;"	T
 Output	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    type Output = UnixStream;$/;"	T
 Output	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    type Output = PollOpt;$/;"	T
 Output	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    type Output = Ready;$/;"	T
 Output	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/ready.rs	/^    type Output = UnixReady;$/;"	T
+Output	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    type Output = T;$/;"	T
 Overlapped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^impl Overlapped {$/;"	i
 Overlapped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^pub struct Overlapped {$/;"	s
+OwnedKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct OwnedKV<T>(#[doc(hidden)]$/;"	s
+OwnedKVList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl OwnedKVList {$/;"	i
+OwnedKVList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct OwnedKVList {$/;"	s
+OwnedKVListNode	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^struct OwnedKVListNode<T>$/;"	s
+OwnedKeyValueList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type OwnedKeyValueList = OwnedKVList;$/;"	T
 PAGE_SIZE	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^    static PAGE_SIZE: AtomicUsize = ATOMIC_USIZE_INIT;$/;"	c
 PAGE_SIZE	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^    static PAGE_SIZE: AtomicUsize = ATOMIC_USIZE_INIT;$/;"	c
 POLL_OPT_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const POLL_OPT_SHIFT: usize = 8;$/;"	c
@@ -276,16 +429,28 @@ PipeReader	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 PipeReader	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^pub struct PipeReader {$/;"	s
 PipeWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl PipeWriter {$/;"	i
 PipeWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^pub struct PipeWriter {$/;"	s
+PlainDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> PlainDecorator<W>$/;"	i
+PlainDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct PlainDecorator<W>(RefCell<W>) where W: io::Write;$/;"	s
+PlainRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct PlainRecordDecorator<'a, W: 'a>(&'a RefCell<W>) where W: io::Write;$/;"	s
+PlainSyncDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> PlainSyncDecorator<W>$/;"	i
+PlainSyncDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct PlainSyncDecorator<W>(sync::Arc<sync::Mutex<W>>) where W: io::Write;$/;"	s
+PlainSyncRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct PlainSyncRecordDecorator<W>$/;"	s
 Poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Poll {$/;"	i
 Poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^pub struct Poll {$/;"	s
 PollOpt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^impl PollOpt {$/;"	i
 PollOpt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^pub struct PollOpt(usize);$/;"	s
 ProtectedFixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl ProtectedFixedSizeStack {$/;"	i
 ProtectedFixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^pub struct ProtectedFixedSizeStack(Stack);$/;"	s
+PushFnSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a> PushFnSerializer<'a> {$/;"	i
+PushFnSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct PushFnSerializer<'a> {$/;"	s
+PushFnValue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct PushFnValue<F>(pub F)$/;"	s
+PushLazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type PushLazy<T> = PushFnValue<T>;$/;"	T
 QUEUED_MASK	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const QUEUED_MASK: usize = 1 << QUEUED_SHIFT;$/;"	c
 QUEUED_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const QUEUED_SHIFT: usize = 16;$/;"	c
 READABLE	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^const READABLE: usize = 0b0001;$/;"	c
 READINESS_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const READINESS_SHIFT: usize = 0;$/;"	c
+RS	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^        static RS : $crate::RecordStatic<'static> = record_static!($lvl, $tag);$/;"	c
+RS	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^        static RS : $crate::RecordStatic<'static> = slog_record_static!($lvl,$/;"	c
 Read	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl<'a> Read for &'a PipeReader {$/;"	i
 Read	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^impl<'a> Read for &'a TcpStream {$/;"	i
 Read	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/io.rs	/^impl<'a> Read for &'a Io {$/;"	i
@@ -311,6 +476,15 @@ Receiver	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src
 Receiver	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub struct Receiver<T> {$/;"	s
 ReceiverCtl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl ReceiverCtl {$/;"	i
 ReceiverCtl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub struct ReceiverCtl {$/;"	s
+Record	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a> Record<'a> {$/;"	i
+Record	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct Record<'a> {$/;"	s
+RecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub trait RecordDecorator: io::Write {$/;"	t
+RecordDecorator for Box	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl RecordDecorator for Box<RecordDecorator> {$/;"	i
+RecordDecorator for PlainRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a, W> RecordDecorator for PlainRecordDecorator<'a, W>$/;"	i
+RecordDecorator for PlainSyncRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> RecordDecorator for PlainSyncRecordDecorator<W>$/;"	i
+RecordDecorator for TermRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> RecordDecorator for TermRecordDecorator<'a> {$/;"	i
+RecordLocation	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct RecordLocation {$/;"	s
+RecordStatic	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct RecordStatic<'a> {$/;"	s
 Registration	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl Registration {$/;"	i
 Registration	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^pub struct Registration {$/;"	s
 RegistrationInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl RegistrationInner {$/;"	i
@@ -318,10 +492,12 @@ RegistrationInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-
 Result	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^		impl< $($typevar,)* Result, F: 'static + FnOnce($($typevar),*) -> Result $($add)*> From<F> for $name<($($typevar,)*), Result> {$/;"	i
 Result	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^		impl<$($typevar,)* Result, F: FnOnce($($typevar),*) -> Result> FnBox<($($typevar,)*), Result> for F {$/;"	i
 Result	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^pub type Result<T> = ::std::result::Result<T, TimerError>;$/;"	T
+Result	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type Result<T = ()> = result::Result<T, Error>;$/;"	T
 ResumeOntopFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^pub type ResumeOntopFn = extern "C" fn(t: Transfer) -> Transfer;$/;"	T
 SCM_RIGHTS	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^            const SCM_RIGHTS: libc::c_int = 1;$/;"	c
 SOCK_CLOEXEC	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^        const SOCK_CLOEXEC: libc::c_int = 0;$/;"	c
 SOCK_NONBLOCK	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^        const SOCK_NONBLOCK: libc::c_int = 0;$/;"	c
+STATIC_TERMINATOR_UNIT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub static STATIC_TERMINATOR_UNIT: () = ();$/;"	c
 Selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^impl Selector {$/;"	i
 Selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^pub struct Selector {$/;"	s
 Selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^impl Selector {$/;"	i
@@ -339,20 +515,49 @@ Send for Overlapped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mi
 Send for ReadinessQueue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^unsafe impl Send for ReadinessQueue {}$/;"	i
 Send for Registration	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^unsafe impl Send for Registration {}$/;"	i
 Send for SetReadiness	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^unsafe impl Send for SetReadiness {}$/;"	i
+Send for Slab	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^unsafe impl<T, I> Send for Slab<T, I> where T: Send {}$/;"	i
 SendBoxFnOnce	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^impl<Args, Result> SendBoxFnOnce<Args, Result> {$/;"	i
 SendBoxFnOnce	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^pub struct SendBoxFnOnce<Arguments, Result = ()> (Box<FnBox<Arguments, Result> + Send>);$/;"	s
 SendError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub enum SendError<T> {$/;"	g
+SendRefUnwindSafeDrain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendRefUnwindSafeDrain: Drain + Send + RefUnwindSafe {}$/;"	t
+SendRefUnwindSafeDrain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendRefUnwindSafeDrain: Drain + Send {}$/;"	t
+SendRefUnwindSafeDrain for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendRefUnwindSafeDrain for T where T: Drain + Send + ?Sized {}$/;"	i
+SendRefUnwindSafeDrain for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendRefUnwindSafeDrain for T$/;"	i
 SendString	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^	impl SendString {$/;"	i
 SendString	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^	struct SendString(String, Arc<()>);$/;"	s
+SendSyncRefUnwindSafeDrain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncRefUnwindSafeDrain: Drain + Send + Sync + RefUnwindSafe {}$/;"	t
+SendSyncRefUnwindSafeDrain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncRefUnwindSafeDrain: Drain + Send + Sync {}$/;"	t
+SendSyncRefUnwindSafeDrain for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncRefUnwindSafeDrain for T where T: Drain + Send + Sync + ?Sized {}$/;"	i
+SendSyncRefUnwindSafeDrain for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncRefUnwindSafeDrain for T$/;"	i
+SendSyncRefUnwindSafeKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncRefUnwindSafeKV: KV + Send + Sync + RefUnwindSafe {}$/;"	t
+SendSyncRefUnwindSafeKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncRefUnwindSafeKV: KV + Send + Sync {}$/;"	t
+SendSyncRefUnwindSafeKV for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncRefUnwindSafeKV for T where T: KV + Send + Sync + ?Sized {}$/;"	i
+SendSyncRefUnwindSafeKV for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncRefUnwindSafeKV for T$/;"	i
+SendSyncUnwindSafe	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncUnwindSafe: Send + Sync + UnwindSafe {}$/;"	t
+SendSyncUnwindSafe for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncUnwindSafe for T where T: Send + Sync + UnwindSafe + ?Sized {}$/;"	i
+SendSyncUnwindSafeDrain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncUnwindSafeDrain: Drain + Send + Sync + UnwindSafe {}$/;"	t
+SendSyncUnwindSafeDrain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait SendSyncUnwindSafeDrain: Drain + Send + Sync {}$/;"	t
+SendSyncUnwindSafeDrain for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncUnwindSafeDrain for T where T: Drain + Send + Sync + ?Sized {}$/;"	i
+SendSyncUnwindSafeDrain for T	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> SendSyncUnwindSafeDrain for T$/;"	i
 Sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> Sender<T> {$/;"	i
 Sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub struct Sender<T> {$/;"	s
 Sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^impl<M> Sender<M> {$/;"	i
 Sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^pub struct Sender<M> {$/;"	s
 SenderCtl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl SenderCtl {$/;"	i
 SenderCtl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub struct SenderCtl {$/;"	s
+Serialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type Serialize = Value;$/;"	T
+Serializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait Serializer {$/;"	t
+Serializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> Serializer<'a> {$/;"	i
+Serializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^struct Serializer<'a> {$/;"	s
+Serializer for AsFmtSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<F> Serializer for AsFmtSerializer<F>$/;"	i
+Serializer for ToSendSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Serializer for ToSendSerializer {$/;"	i
 SetReadiness	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl SetReadiness {$/;"	i
 SetReadiness	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^pub struct SetReadiness {$/;"	s
+SingleKV	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub struct SingleKV<V>(pub Key, pub V) where V: Value;$/;"	s
 Slab	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^type Slab<T> = ::slab::Slab<T, ::Token>;$/;"	T
+Slab	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^impl<T, I> Slab<T, I> {$/;"	i
+Slab	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^pub struct Slab<T, I = usize> {$/;"	s
+Slot	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^enum Slot<T> {$/;"	g
 Stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Stack {$/;"	i
 Stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^pub struct Stack {$/;"	s
 StackError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^pub enum StackError {$/;"	g
@@ -375,6 +580,7 @@ SyncSender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 TERMINATE_THREAD	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^const TERMINATE_THREAD: usize = 0;$/;"	c
 TICK_MAX	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^const TICK_MAX: Tick = u64::MAX;$/;"	c
 TIMER	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^const TIMER: Token = Token(usize::MAX - 2);$/;"	c
+TIMESTAMP_FORMAT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^const TIMESTAMP_FORMAT: &'static str = "%b %d %H:%M:%S%.3f";$/;"	c
 TOKEN_RD_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const TOKEN_RD_SHIFT: usize = 12;$/;"	c
 TOKEN_WR_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const TOKEN_WR_SHIFT: usize = 14;$/;"	c
 TYPE	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^    const TYPE: libc::c_int = libc::MAP_PRIVATE | libc::MAP_ANON | MAP_STACK;$/;"	c
@@ -398,6 +604,13 @@ TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^pub struct TcpStream {$/;"	s
 TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^impl TcpStream {$/;"	i
 TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^pub struct TcpStream {$/;"	s
+TermDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl TermDecorator {$/;"	i
+TermDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct TermDecorator {$/;"	s
+TermDecoratorBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl TermDecoratorBuilder {$/;"	i
+TermDecoratorBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct TermDecoratorBuilder {$/;"	s
+TermRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub struct TermRecordDecorator<'a> {$/;"	s
+ThreadSafeTimestampFn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub trait ThreadSafeTimestampFn$/;"	t
+ThreadSafeTimestampFn for F	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<F> ThreadSafeTimestampFn for F$/;"	i
 Tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^type Tick = u64;$/;"	T
 Timeout	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/handler.rs	/^    type Timeout;$/;"	T
 Timeout	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^        type Timeout = ();$/;"	T
@@ -408,6 +621,8 @@ TimerError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 TimerError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^pub struct TimerError {$/;"	s
 TimerErrorKind	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^pub enum TimerErrorKind {$/;"	g
 TimerResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^pub type TimerResult<T> = Result<T>;$/;"	T
+ToSendSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl ToSendSerializer {$/;"	i
+ToSendSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^struct ToSendSerializer {$/;"	s
 Token	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/token.rs	/^pub struct Token(pub usize);$/;"	s
 Transfer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^impl Transfer {$/;"	i
 Transfer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^pub struct Transfer {$/;"	s
@@ -436,6 +651,22 @@ UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^pub struct UnixSocket {$/;"	s
 UnixStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl UnixStream {$/;"	i
 UnixStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^pub struct UnixStream {$/;"	s
+VacantEntry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^pub struct VacantEntry<'a, T: 'a, I: 'a> {$/;"	s
+Value	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^        impl Value for $t {$/;"	i
+Value	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl Value for () {$/;"	i
+Value	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a, V> Value for &'a V$/;"	i
+Value	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub trait Value {$/;"	t
+Value for Arc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> Value for Arc<T>$/;"	i
+Value for Box	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> Value for Box<T>$/;"	i
+Value for FnValue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<V: 'static + Value, F> Value for FnValue<V, F>$/;"	i
+Value for Option	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T: Value> Value for Option<T> {$/;"	i
+Value for PushFnValue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<F> Value for PushFnValue<F>$/;"	i
+Value for Rc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> Value for Rc<T>$/;"	i
+Value for String	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl Value for String {$/;"	i
+Value for core	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> Value for core::num::Wrapping<T>$/;"	i
+Value for fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<'a> Value for fmt::Arguments<'a> {$/;"	i
+Value for str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl Value for str {$/;"	i
+ValueSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub type ValueSerializer<'a> = PushFnSerializer<'a>;$/;"	T
 VirtualProtect	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^    pub fn VirtualProtect(lpAddress: winapi::LPVOID,$/;"	f
 WOULDBLOCK	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^    const WOULDBLOCK: i32 = ::libc::EAGAIN;$/;"	c
 WOULDBLOCK	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^    const WOULDBLOCK: i32 = ::winapi::winerror::WSAEWOULDBLOCK as i32;$/;"	c
@@ -453,10 +684,12 @@ Write for PipeWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/m
 Write for TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^impl Write for TcpStream {$/;"	i
 Write for UnixSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^impl Write for UnixSocket {$/;"	i
 Write for UnixStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^impl Write for UnixStream {$/;"	i
+X	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    struct X {$/;"	s
 __lazy_static_create	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/core_lazy.rs	/^macro_rules! __lazy_static_create {$/;"	d
 __lazy_static_create	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lazy.rs	/^macro_rules! __lazy_static_create {$/;"	d
 __lazy_static_create	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/nightly_lazy.rs	/^macro_rules! __lazy_static_create {$/;"	d
 __lazy_static_internal	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^macro_rules! __lazy_static_internal {$/;"	d
+__slog_static_max_level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub fn __slog_static_max_level() -> FilterLevel {$/;"	f
 __stability	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^                    unsafe fn __stability() -> &'static $T {$/;"	f
 __static_ref_initialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^                    fn __static_ref_initialize() -> $T { $e }$/;"	f
 accept	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/io.rs	/^    fn accept(&self) -> io::Result<Option<Self::Output>>;$/;"	f
@@ -492,9 +725,15 @@ as_raw_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 as_raw_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    fn as_raw_fd(&self) -> RawFd {$/;"	f
 as_ref	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/sys/unix.rs	/^    pub fn as_ref(&self) -> &[u8] {$/;"	f
 as_ref	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/sys/windows.rs	/^    pub fn as_ref(&self) -> &[u8] {$/;"	f
+as_short_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn as_short_str(&self) -> &'static str {$/;"	f
+as_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn as_str(&self) -> &'static str {$/;"	f
+as_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn as_usize(&self) -> usize {$/;"	f
 associate_selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn associate_selector(&self, poll: &Poll) -> io::Result<()> {$/;"	f
+available	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn available(&self) -> usize {$/;"	f
 awakener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod awakener;$/;"	m
 awakener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^mod awakener;$/;"	m
+b	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! b($/;"	d
+bar	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^        fn bar(&self) -> u32 {$/;"	f
 bind	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn bind<P: AsRef<Path> + ?Sized>(&self, addr: &P) -> io::Result<()> {$/;"	f
 bind	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn bind<P: AsRef<Path> + ?Sized>(addr: &P) -> io::Result<UnixListener> {$/;"	f
 bind	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn bind(addr: &SocketAddr) -> io::Result<TcpListener> {$/;"	f
@@ -519,6 +758,11 @@ broadcast	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 buffer_pool	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^mod buffer_pool;$/;"	m
 build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn build<H: Handler>(self) -> io::Result<EventLoop<H>> {$/;"	f
 build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn build<T>(self) -> Timer<T> {$/;"	f
+build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn build(self) -> Async {$/;"	f
+build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn build(self) -> AsyncCore {$/;"	f
+build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn build(self) -> CompactFormat<D> {$/;"	f
+build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn build(self) -> FullFormat<D> {$/;"	f
+build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn build(self) -> TermDecorator {$/;"	f
 build_n_args	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^macro_rules! build_n_args {$/;"	d
 call	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^			fn call(self: Box<Self>, ($($var,)*): ($($typevar,)*)) -> Result {$/;"	f
 call	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^			pub fn call(self $(, $var: $typevar)*) -> Result {$/;"	f
@@ -532,7 +776,11 @@ capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src
 capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn capacity(&self) -> usize {$/;"	f
 capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn capacity(&self) -> usize {$/;"	f
 capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn capacity(mut self, capacity: usize) -> Builder {$/;"	f
+capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn capacity(&self) -> usize {$/;"	f
 cause	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^    fn cause(&self) -> Option<&error::Error> {$/;"	f
+cause	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn cause(&self) -> Option<&std::error::Error> {$/;"	f
+chan_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn chan_size(mut self, s: usize) -> Self {$/;"	f
+chan_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn chan_size(self, s: usize) -> Self {$/;"	f
 channel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub fn channel<T>() -> (Sender<T>, Receiver<T>) {$/;"	f
 channel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn channel(&self) -> Sender<H::Message> {$/;"	f
 channel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^pub mod channel;$/;"	m
@@ -540,6 +788,7 @@ channel	/home/dpc/lab/rust/miofib/src/lib.rs	/^fn channel() -> (LoopTx, LoopRx) 
 check_same_selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    fn check_same_selector(&self, poll: &Poll) -> io::Result<()> {$/;"	f
 cleanup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/awakener.rs	/^        pub fn cleanup(&self) {$/;"	f
 cleanup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/awakener.rs	/^    pub fn cleanup(&self) {$/;"	f
+clear	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn clear(&mut self) {$/;"	f
 clear_timeout	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn clear_timeout(&mut self, timeout: &Timeout) -> bool {$/;"	f
 clone	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    fn clone(&self) -> Sender<T> {$/;"	f
 clone	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    fn clone(&self) -> SenderCtl {$/;"	f
@@ -552,6 +801,7 @@ clone_ref	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 closure_string	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^	fn closure_string() -> NoSendString {$/;"	f
 closure_string	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^	fn closure_string() -> SendString {$/;"	f
 coalesce	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    fn coalesce(&mut self, awakener: Token) -> bool {$/;"	f
+column	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn column(&self) -> u32 {$/;"	f
 compare_and_swap	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn compare_and_swap(&self, current: ReadinessState, new: ReadinessState, order: Ordering) -> ReadinessState {$/;"	f
 configured	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    fn configured(config: Config) -> io::Result<EventLoop<H>> {$/;"	f
 connect	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn connect<P: AsRef<Path> + ?Sized>(path: &P) -> io::Result<UnixStream> {$/;"	f
@@ -567,18 +817,26 @@ connect	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/
 connect_stream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn connect_stream(stream: net::TcpStream,$/;"	f
 contains	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn contains(&self, other: PollOpt) -> bool {$/;"	f
 contains	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn contains<T: Into<Self>>(&self, other: T) -> bool {$/;"	f
+contains	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn contains(&self, idx: I) -> bool {$/;"	f
 context	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/lib.rs	/^pub mod context;$/;"	m
 context_function	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^        extern "C" fn context_function(mut t: Transfer) -> ! {$/;"	f
 context_function	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^        extern "C" fn context_function(t: Transfer) -> ! {$/;"	f
 context_function	/home/dpc/lab/rust/miofib/src/lib.rs	/^        extern "C" fn context_function(mut t: context::Transfer) -> ! {$/;"	f
 convert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^mod convert {$/;"	m
+convert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> convert::From<OwnedKV<T>> for OwnedKVList$/;"	i
 convert_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^    fn convert_mut() {$/;"	f
 convert_ref	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^    fn convert_ref() {$/;"	f
+core::fmt::Display for Error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl core::fmt::Display for Error {$/;"	i
+count	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn count(&self) -> usize {$/;"	f
+crit	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! crit($/;"	d
+cs	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^macro_rules! cs($/;"	d
 ctl_pair	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^pub fn ctl_pair() -> (SenderCtl, ReceiverCtl) {$/;"	f
 current_tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^fn current_tick(start: Instant, tick_ms: u64) -> Tick {$/;"	f
+custom	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn custom<D: slog::Drain<Err = slog::Never, Ok = ()> + Send + 'static>$/;"	f
 cvt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^fn cvt<T: IsMinusOne>(t: T) -> ::io::Result<T> {$/;"	f
 deallocate_stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^pub fn deallocate_stack(ptr: *mut c_void, size: usize) {$/;"	f
 deallocate_stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^pub fn deallocate_stack(ptr: *mut c_void, _: usize) {$/;"	f
+debug	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! debug($/;"	d
 dec	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    pub fn dec(&self) -> io::Result<()> {$/;"	f
 default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    fn default() -> FixedSizeStack {$/;"	f
 default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    fn default() -> ProtectedFixedSizeStack {$/;"	f
@@ -586,6 +844,7 @@ default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/sr
 default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    fn default() -> Config {$/;"	f
 default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn default() -> Builder {$/;"	f
 default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn default() -> Timer<T> {$/;"	f
+default	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn default<D: slog::Drain<Err = slog::Never, Ok = ()> + Send + 'static>$/;"	f
 default_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    pub fn default_size() -> usize {$/;"	f
 default_stack_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/mod.rs	/^pub fn default_stack_size() -> usize {$/;"	f
 deprecated	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^pub mod deprecated {$/;"	m
@@ -627,6 +886,7 @@ deregister_socket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-
 description	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    fn description(&self) -> &str {$/;"	f
 description	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^    fn description(&self) -> &str {$/;"	f
 description	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn description(&self) -> &str {$/;"	f
+description	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn description(&self) -> &str {$/;"	f
 disarm	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn disarm(&mut self) {$/;"	f
 dlsym	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/dlsym.rs	/^macro_rules! dlsym {$/;"	d
 dlsym	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^pub mod dlsym;$/;"	m
@@ -640,10 +900,53 @@ drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys
 drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^    fn drop(&mut self) {$/;"	f
 drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn drop(&mut self) {$/;"	f
 drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    fn drop(&mut self) {$/;"	f
+drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn drop(&mut self) {$/;"	f
+drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn drop(&mut self) {$/;"	f
+drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn drop(&mut self) {$/;"	f
 drops	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^    fn drops() {$/;"	f
 duration_to_tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^fn duration_to_tick(elapsed: Duration, tick_ms: u64) -> Tick {$/;"	f
 edge	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn edge() -> PollOpt {$/;"	f
 effective_readiness	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn effective_readiness(&self) -> Ready {$/;"	f
+emit_arguments	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn emit_arguments(&mut self, key: Key, val: &fmt::Arguments) -> Result {$/;"	f
+emit_arguments	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn emit_arguments(&mut self, key: Key, val: &fmt::Arguments) -> Result;$/;"	f
+emit_arguments	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_arguments(&mut self,$/;"	f
+emit_arguments	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_arguments(&mut self,$/;"	f
+emit_bool	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_bool(&mut self, key: Key, val: bool) -> slog::Result {$/;"	f
+emit_bool	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_bool(&mut self, key: &str, val: bool) -> slog::Result {$/;"	f
+emit_char	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_char(&mut self, key: Key, val: char) -> slog::Result {$/;"	f
+emit_char	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_char(&mut self, key: &str, val: char) -> slog::Result {$/;"	f
+emit_f32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_f32(&mut self, key: Key, val: f32) -> slog::Result {$/;"	f
+emit_f32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_f32(&mut self, key: &str, val: f32) -> slog::Result {$/;"	f
+emit_f64	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_f64(&mut self, key: Key, val: f64) -> slog::Result {$/;"	f
+emit_f64	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_f64(&mut self, key: &str, val: f64) -> slog::Result {$/;"	f
+emit_i16	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_i16(&mut self, key: Key, val: i16) -> slog::Result {$/;"	f
+emit_i16	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_i16(&mut self, key: &str, val: i16) -> slog::Result {$/;"	f
+emit_i32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_i32(&mut self, key: Key, val: i32) -> slog::Result {$/;"	f
+emit_i32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_i32(&mut self, key: &str, val: i32) -> slog::Result {$/;"	f
+emit_i64	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_i64(&mut self, key: Key, val: i64) -> slog::Result {$/;"	f
+emit_i64	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_i64(&mut self, key: &str, val: i64) -> slog::Result {$/;"	f
+emit_i8	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_i8(&mut self, key: Key, val: i8) -> slog::Result {$/;"	f
+emit_i8	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_i8(&mut self, key: &str, val: i8) -> slog::Result {$/;"	f
+emit_isize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_isize(&mut self, key: Key, val: isize) -> slog::Result {$/;"	f
+emit_isize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_isize(&mut self, key: &str, val: isize) -> slog::Result {$/;"	f
+emit_none	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn emit_none(&mut self, key: Key) -> Result {$/;"	f
+emit_none	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_none(&mut self, key: Key) -> slog::Result {$/;"	f
+emit_none	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_none(&mut self, key: &str) -> slog::Result {$/;"	f
+emit_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_str(&mut self, key: Key, val: &str) -> slog::Result {$/;"	f
+emit_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_str(&mut self, key: &str, val: &str) -> slog::Result {$/;"	f
+emit_u16	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_u16(&mut self, key: Key, val: u16) -> slog::Result {$/;"	f
+emit_u16	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_u16(&mut self, key: &str, val: u16) -> slog::Result {$/;"	f
+emit_u32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_u32(&mut self, key: Key, val: u32) -> slog::Result {$/;"	f
+emit_u32	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_u32(&mut self, key: &str, val: u32) -> slog::Result {$/;"	f
+emit_u64	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_u64(&mut self, key: Key, val: u64) -> slog::Result {$/;"	f
+emit_u64	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_u64(&mut self, key: &str, val: u64) -> slog::Result {$/;"	f
+emit_u8	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_u8(&mut self, key: Key, val: u8) -> slog::Result {$/;"	f
+emit_u8	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_u8(&mut self, key: &str, val: u8) -> slog::Result {$/;"	f
+emit_unit	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn emit_unit(&mut self, key: Key) -> Result {$/;"	f
+emit_unit	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_unit(&mut self, key: Key) -> slog::Result {$/;"	f
+emit_unit	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_unit(&mut self, key: &str) -> slog::Result {$/;"	f
+emit_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn emit_usize(&mut self, key: Key, val: usize) -> slog::Result {$/;"	f
+emit_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn emit_usize(&mut self, key: &str, val: usize) -> slog::Result {$/;"	f
 empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn empty() -> PollOpt {$/;"	f
 empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn empty() -> Ready {$/;"	f
 end_marker	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn end_marker(&self) -> *mut ReadinessNode {$/;"	f
@@ -651,9 +954,11 @@ enqueue_node	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6
 enqueue_node_with_wakeup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn enqueue_node_with_wakeup(&self, node: &ReadinessNode) -> io::Result<()> {$/;"	f
 enqueue_with_wakeup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn enqueue_with_wakeup(&self) -> io::Result<()> {$/;"	f
 enqueue_with_wakeup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^fn enqueue_with_wakeup(queue: *mut (), node: &ReadinessNode) -> io::Result<()> {$/;"	f
+entry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn entry(&mut self, idx: I) -> Option<Entry<T, I>> {$/;"	f
 epoll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod epoll;$/;"	m
 error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn error() -> Ready {$/;"	f
 error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/ready.rs	/^    pub fn error() -> UnixReady {$/;"	f
+error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! error($/;"	d
 error::Error for NotifyError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^impl<M: any::Any> error::Error for NotifyError<M> {$/;"	i
 error::Error for SendError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T: Any> error::Error for SendError<T> {$/;"	i
 error::Error for TimerError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^impl error::Error for TimerError {$/;"	i
@@ -662,7 +967,14 @@ event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/li
 event_imp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^mod event_imp;$/;"	m
 event_loop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/mod.rs	/^mod event_loop;$/;"	m
 eventedfd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod eventedfd;$/;"	m
+expressions	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^fn expressions() {$/;"	f
 fetch	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/dlsym.rs	/^unsafe fn fetch(name: &str) -> usize {$/;"	f
+file	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn file(&self) -> &'static str {$/;"	f
+filter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn filter<F>(self, f: F) -> Filter<Self, F>$/;"	f
+filter_level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn filter_level(self, level: Level) -> LevelFilter<Self>$/;"	f
+filterlevel_sanity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^fn filterlevel_sanity() {$/;"	f
+finish	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn finish(self) -> Box<KV + Send> {$/;"	f
+finish	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn finish(&mut self) -> io::Result<usize> {$/;"	f
 flag_as_dropped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn flag_as_dropped(&self) -> bool {$/;"	f
 flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    fn flush(&mut self) -> io::Result<()> {$/;"	f
 flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    fn flush(&mut self) -> io::Result<()> {$/;"	f
@@ -670,6 +982,7 @@ flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sy
 flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^    fn flush(&mut self) -> io::Result<()> {$/;"	f
 flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    fn flush(&mut self) -> io::Result<()> {$/;"	f
 flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn flush(&self) -> io::Result<()> {$/;"	f
+flush	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn flush(&mut self) -> io::Result<()> {$/;"	f
 fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {$/;"	f
@@ -682,14 +995,21 @@ fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/
 fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> result::Result<(), fmt::Error> {$/;"	f
+fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn fmt(&self, fmt: &mut core::fmt::Formatter) -> std::fmt::Result {$/;"	f
 fmt::Debug for Binding	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^impl fmt::Debug for Binding {$/;"	i
 fmt::Debug for Context	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^impl fmt::Debug for Context {$/;"	i
 fmt::Debug for EventLoop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^impl<H: Handler> fmt::Debug for EventLoop<H> {$/;"	i
 fmt::Debug for Events	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl fmt::Debug for Events {$/;"	i
 fmt::Debug for Events	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^impl fmt::Debug for Events {$/;"	i
 fmt::Debug for Inner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^impl fmt::Debug for Inner {$/;"	i
+fmt::Debug for Logger	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D> fmt::Debug for Logger<D>$/;"	i
+fmt::Debug for MutexDrainError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D> fmt::Debug for MutexDrainError<D>$/;"	i
 fmt::Debug for NotifyError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^impl<M> fmt::Debug for NotifyError<M> {$/;"	i
 fmt::Debug for Overlapped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^impl fmt::Debug for Overlapped {$/;"	i
+fmt::Debug for OwnedKVList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl fmt::Debug for OwnedKVList {$/;"	i
 fmt::Debug for Poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl fmt::Debug for Poll {$/;"	i
 fmt::Debug for PollOpt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^impl fmt::Debug for PollOpt {$/;"	i
 fmt::Debug for Ready	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^impl fmt::Debug for Ready {$/;"	i
@@ -698,10 +1018,13 @@ fmt::Debug for Selector	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec82
 fmt::Debug for SendError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> fmt::Debug for SendError<T> {$/;"	i
 fmt::Debug for Sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^impl<M> fmt::Debug for Sender<M> {$/;"	i
 fmt::Debug for SetReadiness	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^impl fmt::Debug for SetReadiness {$/;"	i
+fmt::Debug for Slab	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^impl<T, I> fmt::Debug for Slab<T, I>$/;"	i
 fmt::Debug for TcpListener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^impl fmt::Debug for TcpListener {$/;"	i
 fmt::Debug for TcpStream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^impl fmt::Debug for TcpStream {$/;"	i
 fmt::Debug for TrySendError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> fmt::Debug for TrySendError<T> {$/;"	i
 fmt::Debug for UdpSocket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^impl fmt::Debug for UdpSocket {$/;"	i
+fmt::Display for Level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl fmt::Display for Level {$/;"	i
+fmt::Display for MutexDrainError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D: Drain> fmt::Display for MutexDrainError<D>$/;"	i
 fmt::Display for NotifyError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/notify.rs	/^impl<M> fmt::Display for NotifyError<M> {$/;"	i
 fmt::Display for SendError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> fmt::Display for SendError<T> {$/;"	i
 fmt::Display for TimerError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^impl fmt::Display for TimerError {$/;"	i
@@ -709,6 +1032,10 @@ fmt::Display for TimerErrorKind	/home/dpc/.cargo/registry/src/github.com-1ecc629
 fmt::Display for TrySendError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^impl<T> fmt::Display for TrySendError<T> {$/;"	i
 fn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/core_lazy.rs	/^    pub const fn new() -> Self {$/;"	c
 fn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/nightly_lazy.rs	/^    pub const fn new() -> Self {$/;"	c
+force_color	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn force_color(mut self) -> Self {$/;"	f
+force_plain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn force_plain(mut self) -> Self {$/;"	f
+format_compact	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn format_compact(&self,$/;"	f
+format_full	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn format_full(&self,$/;"	f
 format_send_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^fn format_send_error<T>(e: &SendError<T>, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 format_try_send_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^fn format_try_send_error<T>(e: &TrySendError<T>, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^			fn from(func: F) -> Self {$/;"	f
@@ -736,6 +1063,15 @@ from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys
 from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    fn from(io: Io) -> UnixSocket {$/;"	f
 from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/token.rs	/^    fn from(val: Token) -> usize {$/;"	f
 from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/token.rs	/^    fn from(val: usize) -> Token {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^        fn from(i: usize) -> MyIndex {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from(_ : std::sync::PoisonError<std::sync::MutexGuard<'a, D>>)$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from(_: core::fmt::Error) -> Error {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from(e: Error) -> std::io::Error {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from(err: std::io::Error) -> Error {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from(from: OwnedKV<T>) -> Self {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn from(_: mpsc::TrySendError<T>) -> AsyncError {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn from(_: std::sync::TryLockError<T>) -> AsyncError {$/;"	f
+from	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn from(err: std::sync::PoisonError<T>) -> AsyncError {$/;"	f
 from_listener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn from_listener(listener: net::TcpListener, addr: &SocketAddr)$/;"	f
 from_raw	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^    pub unsafe fn from_raw(ptr: *mut T) -> FromRawArc<T> {$/;"	f
 from_raw_arc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^mod from_raw_arc;$/;"	m
@@ -758,9 +1094,15 @@ from_socket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/
 from_stderr	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn from_stderr(stderr: process::ChildStderr) -> io::Result<Self> {$/;"	f
 from_stdin	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn from_stdin(stdin: process::ChildStdin) -> io::Result<Self> {$/;"	f
 from_stdout	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn from_stdout(stdout: process::ChildStdout) -> io::Result<Self> {$/;"	f
+from_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from_str(level: &str) -> core::result::Result<FilterLevel, ()> {$/;"	f
+from_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn from_str(level: &str) -> core::result::Result<Level, ()> {$/;"	f
 from_stream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn from_stream(stream: net::TcpStream) -> io::Result<TcpStream> {$/;"	f
 from_stream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^    pub fn from_stream(stream: net::TcpStream) -> TcpStream {$/;"	f
 from_stream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn from_stream(stream: net::TcpStream) -> TcpStream {$/;"	f
+from_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn from_usize(u: usize) -> Option<FilterLevel> {$/;"	f
+from_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn from_usize(u: usize) -> Option<Level> {$/;"	f
+function	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn function(&self) -> &'static str {$/;"	f
+fuse	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn fuse(self) -> Fuse<Self>$/;"	f
 get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/core_lazy.rs	/^    pub fn get<F>(&'static self, builder: F) -> &T$/;"	f
 get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lazy.rs	/^    pub fn get<F>(&'static mut self, f: F) -> &T$/;"	f
 get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/nightly_lazy.rs	/^    pub fn get<F>(&'static self, f: F) -> &T$/;"	f
@@ -771,17 +1113,30 @@ get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/
 get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn get(&self, idx: usize) -> Option<Event> {$/;"	f
 get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/buffer_pool.rs	/^    pub fn get(&mut self, default_cap: usize) -> Vec<u8> {$/;"	f
 get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn get(&self, idx: usize) -> Option<Event> {$/;"	f
+get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn get(&self) -> &T {$/;"	f
+get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn get(&self, idx: I) -> Option<&T> {$/;"	f
 get_buffer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn get_buffer(&self, size: usize) -> Vec<u8> {$/;"	f
+get_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn get_mut(&mut self) -> &mut T {$/;"	f
+get_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn get_mut(&mut self, idx: I) -> Option<&mut T> {$/;"	f
+get_sender	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn get_sender(&self)$/;"	f
 handler	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/mod.rs	/^mod handler;$/;"	m
+has_available	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn has_available(&self) -> bool {$/;"	f
 hup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn hup() -> Ready {$/;"	f
 hup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/ready.rs	/^    pub fn hup() -> UnixReady {$/;"	f
 id	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^    pub fn id(&self) -> usize {$/;"	f
 id	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn id(&self) -> usize {$/;"	f
 id	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn id(&self) -> usize {$/;"	f
 identical	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    fn identical(&self, other: &SelectorInner) -> bool {$/;"	f
+ignore_res	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn ignore_res(self) -> IgnoreResult<Self>$/;"	f
+impl_default_as_fmt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! impl_default_as_fmt{$/;"	d
 impl_trait_n_args	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/macros.rs	/^macro_rules! impl_trait_n_args {$/;"	d
+impl_value_for	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! impl_value_for{$/;"	d
 inaddr_any	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^fn inaddr_any(other: &SocketAddr) -> SocketAddr {$/;"	f
 inc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    pub fn inc(&self) -> io::Result<()> {$/;"	f
+index	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn index(&self, index: I) -> &T {$/;"	f
+index	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn index(&self) -> I {$/;"	f
+index_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn index_mut(&mut self, index: I) -> &mut T {$/;"	f
+info	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! info($/;"	d
 initialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^            fn initialize(lazy: &Self) {$/;"	f
 initialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^    fn initialize(lazy: &Self);$/;"	f
 initialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^pub fn initialize<T: LazyStatic>(lazy: &T) {$/;"	f
@@ -791,11 +1146,19 @@ inner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sy
 insert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn insert(&mut self, other: PollOpt) {$/;"	f
 insert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn insert<T: Into<Self>>(&mut self, other: T) {$/;"	f
 insert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn insert(&mut self, tick: Tick, state: T) -> Result<Timeout> {$/;"	f
+insert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn insert(&mut self, val: T) -> Result<I, T> {$/;"	f
+insert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn insert(self, val: T) -> Entry<'a, T, I> {$/;"	f
+insert_at	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn insert_at(&mut self, idx: usize, value: T) -> I {$/;"	f
 interest	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn interest(&self) -> Ready {$/;"	f
 interrupted	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/handler.rs	/^    fn interrupted(&mut self, event_loop: &mut EventLoop<Self>) {$/;"	f
 into	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^		fn into(self) -> String {$/;"	f
 into	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^		fn into(self) -> String {$/;"	f
+into	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^        fn into(self) -> usize {$/;"	f
+into_erased	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn into_erased$/;"	f
 into_iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn into_iter(self) -> Self::IntoIter {$/;"	f
+into_iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn into_iter(self) -> Iter<'a, T, I> {$/;"	f
+into_iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn into_iter(self) -> IterMut<'a, T, I> {$/;"	f
+into_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn into_mut(self) -> &'a mut T {$/;"	f
 into_raw_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    fn into_raw_fd(self) -> RawFd {$/;"	f
 into_raw_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    fn into_raw_fd(self) -> RawFd {$/;"	f
 into_raw_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    fn into_raw_fd(self) -> RawFd {$/;"	f
@@ -807,11 +1170,16 @@ into_raw_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/
 io	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/mod.rs	/^mod io;$/;"	m
 io	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^mod io;$/;"	m
 io	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod io;$/;"	m
+io::Write for CountingWriter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> io::Write for CountingWriter<'a> {$/;"	i
+io::Write for PlainRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a, W> io::Write for PlainRecordDecorator<'a, W>$/;"	i
+io::Write for PlainSyncRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> io::Write for PlainSyncRecordDecorator<W>$/;"	i
+io::Write for TermRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> io::Write for TermRecordDecorator<'a> {$/;"	i
 io_event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    fn io_event(&mut self, handler: &mut H, evt: Event) {$/;"	f
 io_poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    fn io_poll(&mut self, timeout: Option<Duration>) -> io::Result<usize> {$/;"	f
 io_process	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    fn io_process(&mut self, handler: &mut H, cnt: usize) {$/;"	f
 ioevent_to_epoll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^fn ioevent_to_epoll(interest: Ready, opts: PollOpt) -> u32 {$/;"	f
 iovec	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/sys/unix.rs	/^    unsafe fn iovec(&self) -> libc::iovec {$/;"	f
+is_at_least	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn is_at_least(&self, level: Self) -> bool {$/;"	f
 is_dropped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn is_dropped(&self) -> bool {$/;"	f
 is_edge	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn is_edge(&self) -> bool {$/;"	f
 is_empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn is_empty(&self) -> bool {$/;"	f
@@ -819,6 +1187,7 @@ is_empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src
 is_empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^    pub fn is_empty(&self) -> bool {$/;"	f
 is_empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn is_empty(&self) -> bool {$/;"	f
 is_empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn is_empty(&self) -> bool {$/;"	f
+is_empty	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn is_empty(&self) -> bool {$/;"	f
 is_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn is_error(&self) -> bool {$/;"	f
 is_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/ready.rs	/^    pub fn is_error(&self) -> bool {$/;"	f
 is_hup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn is_hup(&self) -> bool {$/;"	f
@@ -839,6 +1208,8 @@ is_urgent	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 is_writable	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn is_writable(&self) -> bool {$/;"	f
 it_works	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn it_works() {$/;"	f
 iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn iter(&self) -> Iter {$/;"	f
+iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn iter(&self) -> Iter<T, I> {$/;"	f
+iter_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn iter_mut(&mut self) -> IterMut<T, I> {$/;"	f
 join_multicast_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn join_multicast_v4(&self,$/;"	f
 join_multicast_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn join_multicast_v4(&self,$/;"	f
 join_multicast_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn join_multicast_v4(&self,$/;"	f
@@ -855,6 +1226,8 @@ kevent	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/s
 kind	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn kind(&self) -> Ready {$/;"	f
 kind_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^pub fn kind_mut(event: &mut Event) -> &mut Ready {$/;"	f
 kqueue	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod kqueue;$/;"	m
+kv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn kv(&self) -> BorrowedKV {$/;"	f
+kv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! kv($/;"	d
 lazy	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^pub mod lazy;$/;"	m
 lazy_static	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^macro_rules! lazy_static {$/;"	d
 leave_multicast_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn leave_multicast_v4(&self,$/;"	f
@@ -870,7 +1243,14 @@ len	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll
 len	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^    pub fn len(&self) -> usize {$/;"	f
 len	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn len(&self) -> usize {$/;"	f
 len	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn len(&self) -> usize {$/;"	f
+len	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn len(&self) -> usize {$/;"	f
 level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn level() -> PollOpt {$/;"	f
+level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn level(&self) -> Level {$/;"	f
+level_at_least	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^fn level_at_least() {$/;"	f
+level_from_str	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^fn level_from_str() {$/;"	f
+level_to_color	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn level_to_color(level: slog::Level) -> u16 {$/;"	f
+line	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn line(&self) -> u32 {$/;"	f
+list	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn list(&self) -> &OwnedKVList {$/;"	f
 listen	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn listen(self, backlog: usize) -> io::Result<UnixListener> {$/;"	f
 listen	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    pub fn listen(&self, backlog: usize) -> io::Result<()> {$/;"	f
 load	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn load(&self, order: Ordering) -> ReadinessState {$/;"	f
@@ -881,21 +1261,41 @@ local_addr	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 local_addr	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn local_addr(&self) -> io::Result<SocketAddr> {$/;"	f
 local_addr	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn local_addr(&self) -> io::Result<SocketAddr> {$/;"	f
 local_addr	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    pub fn local_addr(&self) -> io::Result<SocketAddr> {$/;"	f
+local_index	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn local_index(&self, idx: I) -> Option<usize> {$/;"	f
+location	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn location(&self) -> &RecordLocation {$/;"	f
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn log(&self, _: &Record, _: &OwnedKVList) -> result::Result<(), Never> {$/;"	f
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn log(&self,$/;"	f
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn log(&self, record: &Record) {$/;"	f
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! log($/;"	d
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^            fn log(&self,$/;"	f
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn log(&self,$/;"	f
+log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn log(&self,$/;"	f
+logger_fmt_debug_sanity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    fn logger_fmt_debug_sanity() {$/;"	f
+logger_to_erased	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^fn logger_to_erased() {$/;"	f
 macros	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/lib.rs	/^mod macros;$/;"	m
 main	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^fn main() {$/;"	f
 make_fcontext	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn make_fcontext(sp: *mut c_void, size: usize, f: ContextFn) -> &'static c_void;$/;"	f
+makers	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^fn makers() {$/;"	f
+map	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn map<F, R>(self, f: F) -> R$/;"	f
+map_err	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn map_err<F, E>(self, f: F) -> MapError<Self, E>$/;"	f
 map_non_block	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^    fn map_non_block(self) -> Result<Option<T>> {$/;"	f
 map_non_block	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^    fn map_non_block(self) -> Result<Option<T>>;$/;"	f
 marker	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn marker() -> ReadinessNode {$/;"	f
+max	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn max() -> Self {$/;"	f
 max_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    pub fn max_size() -> usize {$/;"	f
 max_stack_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^pub fn max_stack_size() -> usize {$/;"	f
 max_stack_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^pub fn max_stack_size() -> usize {$/;"	f
+maybe_print_comma	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn maybe_print_comma(&mut self) -> io::Result<()> {$/;"	f
 messages_per_tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn messages_per_tick(&mut self, messages: usize) -> &mut Self {$/;"	f
 millis	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^    pub fn millis(duration: Duration) -> u64 {$/;"	f
 millis	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^pub fn millis(duration: Duration) -> u64 {$/;"	f
+min	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn min() -> Self {$/;"	f
 min_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    pub fn min_size() -> usize {$/;"	f
 min_stack_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^pub fn min_stack_size() -> usize {$/;"	f
 min_stack_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^pub fn min_stack_size() -> usize {$/;"	f
+miofib_logger	/home/dpc/lab/rust/miofib/src/lib.rs	/^fn miofib_logger() -> Logger {$/;"	f
+module	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn module(&self) -> &'static str {$/;"	f
+msg	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn msg(&self) -> &fmt::Arguments {$/;"	f
 multicast_loop_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn multicast_loop_v4(&self) -> io::Result<bool> {$/;"	f
 multicast_loop_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn multicast_loop_v4(&self) -> io::Result<bool> {$/;"	f
 multicast_loop_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn multicast_loop_v4(&self) -> io::Result<bool> {$/;"	f
@@ -908,6 +1308,7 @@ multicast_ttl_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0
 multicast_ttl_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn multicast_ttl_v4(&self) -> io::Result<u32> {$/;"	f
 multicast_ttl_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn multicast_ttl_v4(&self) -> io::Result<u32> {$/;"	f
 multicast_ttl_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    pub fn multicast_ttl_v4(&self) -> io::Result<u32> {$/;"	f
+multichain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    fn multichain() {$/;"	f
 mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lazy.rs	/^        static mut $NAME: $crate::lazy::Lazy<$T> = $crate::lazy::Lazy(0 as *const $T, ONCE_INIT);$/;"	c
 my_into	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    fn my_into(self) -> T;$/;"	f
 my_into	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    fn my_into(self) -> u32 { self as u32 }$/;"	f
@@ -948,18 +1349,42 @@ new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/
 new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn new(socket: net::UdpSocket) -> io::Result<UdpSocket> {$/;"	f
 new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn new(state: T, tick: u64, next: Token) -> Entry<T> {$/;"	f
 new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn new(tick_ms: u64, num_slots: usize, capacity: usize, start: Instant) -> Timer<T> {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn new<T>(values: OwnedKV<T>,$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new(drain1: D1, drain2: D2) -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new(drain: D) -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new(drain: D, cond: F) -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new(drain: D, level: Level) -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new(s: &'a RecordStatic<'a>,$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new<F>(drain: D, map_fn: F) -> Self$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn new<T>(&self, values: OwnedKV<T>) -> Logger<D>$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn new() -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn new(drain: D) -> AsyncBuilder<D> {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn new(drain: D) -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn new<D: slog::Drain<Err = slog::Never, Ok = ()> + Send + 'static>$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    pub fn new<D>(drain: D) -> Self$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn new() -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn new(d: &'a mut RecordDecorator, comma_needed: bool) -> Self {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn new(d: &'a mut RecordDecorator,$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn new(wrapped: &'a mut io::Write) -> CountingWriter {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn new() -> TermDecoratorBuilder {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn new(d: D) -> CompactFormatBuilder<D> {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn new(d: D) -> FullFormatBuilder<D> {$/;"	f
+new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn new(io: W) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new() -> Self {$/;"	f
-new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(rx: LoopRx) -> Self {$/;"	f
+new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(loop_id: usize, rx: LoopRx, log: &Logger) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(rx: mpsc::Receiver<LoopMsg>, reg: mio::Registration) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(tx: mpsc::Sender<LoopMsg>, ctrl: mio::SetReadiness) -> Self {$/;"	f
-new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new<F, T>(f: F) -> Self$/;"	f
+new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new<F, T>(f: F, log : &Logger) -> Self$/;"	f
 new2	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn new2() -> (Registration, SetReadiness) {$/;"	f
 new_family	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn new_family(socket: net::TcpListener, family: Family) -> TcpListener {$/;"	f
 new_priv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn new_priv(poll: &Poll, token: Token, interest: Ready, opt: PollOpt)$/;"	f
 new_registration	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^pub fn new_registration(poll: &Poll, token: Token, ready: Ready, opt: PollOpt)$/;"	f
 next	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn next(&mut self) -> Option<Event> {$/;"	f
+next	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn next(&mut self) -> Option<&'a T> {$/;"	f
+next	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn next(&mut self) -> Option<&'a mut T> {$/;"	f
 next_tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn next_tick(&self) -> Option<Tick> {$/;"	f
 next_token_pos	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn next_token_pos(&self) -> usize {$/;"	f
+no_imports	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^mod no_imports {$/;"	m
 no_notify_on_instant_completion	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^unsafe fn no_notify_on_instant_completion(handle: winapi::HANDLE) -> io::Result<()> {$/;"	f
 no_send	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/lib.rs	/^mod no_send;$/;"	m
 nodelay	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn nodelay(&self) -> io::Result<bool> {$/;"	f
@@ -975,6 +1400,7 @@ notify	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/d
 notify_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn notify_capacity(&mut self, capacity: usize) -> &mut Self {$/;"	f
 num_slots	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn num_slots(mut self, num_slots: usize) -> Builder {$/;"	f
 number_generator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn number_generator() {$/;"	f
+o	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! o($/;"	d
 offset_of	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^macro_rules! offset_of {$/;"	d
 oneshot	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn oneshot() -> PollOpt {$/;"	f
 only_v6	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn only_v6(&self) -> io::Result<bool> {$/;"	f
@@ -1016,14 +1442,17 @@ poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/pol
 poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn poll(&mut self) -> Option<T> {$/;"	f
 poll2	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn poll2(&self, events: &mut Events, timeout: Option<Duration>) -> io::Result<usize> {$/;"	f
 poll_opt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn poll_opt(&self) -> PollOpt {$/;"	f
+poll_queue	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn poll_queue(&mut self) {$/;"	f
 poll_to	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn poll_to(&mut self, mut target_tick: Tick) -> Option<T> {$/;"	f
 port	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn port(&self) -> &CompletionPort {$/;"	f
 post_register	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn post_register(&self, interest: Ready, me: &mut StreamInner) {$/;"	f
 post_register	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    fn post_register(&self, interest: Ready, me: &mut Inner) {$/;"	f
 prepare_for_sleep	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn prepare_for_sleep(&self) -> bool {$/;"	f
+print_msg_header	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^fn print_msg_header(fn_timestamp: &ThreadSafeTimestampFn<Output =$/;"	f
 printerrln	/home/dpc/lab/rust/miofib/src/lib.rs	/^macro_rules! printerrln {$/;"	d
 protect_stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^pub fn protect_stack(stack: &Stack) -> io::Result<Stack> {$/;"	f
 protect_stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^pub fn protect_stack(stack: &Stack) -> io::Result<Stack> {$/;"	f
+push_dropped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn push_dropped(&self, logger_values: &OwnedKVList) -> AsyncResult<()> {$/;"	f
 push_event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^    pub fn push_event(&mut self, event: Event) {$/;"	f
 push_event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn push_event(&mut self, event: Event) {$/;"	f
 push_event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn push_event(&mut self, event: Event) {$/;"	f
@@ -1051,6 +1480,8 @@ ready	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/de
 ready	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod ready;$/;"	m
 ready_as_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^pub fn ready_as_usize(events: Ready) -> usize {$/;"	f
 ready_from_usize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^pub fn ready_from_usize(events: usize) -> Ready {$/;"	f
+record	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! record($/;"	d
+record_static	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! record_static($/;"	d
 recv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn recv(&self, buf: &mut [u8]) -> io::Result<usize> {$/;"	f
 recv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn recv(&self, buf: &mut [u8]) -> io::Result<usize> {$/;"	f
 recv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn recv(&self, mut buf: &mut [u8])$/;"	f
@@ -1093,6 +1524,11 @@ registered	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 release_node	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^fn release_node(ptr: *mut ReadinessNode) {$/;"	f
 remove	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn remove(&mut self, other: PollOpt) {$/;"	f
 remove	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn remove<T: Into<Self>>(&mut self, other: T) {$/;"	f
+remove	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn remove(&mut self, idx: I) -> Option<T> {$/;"	f
+remove	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn remove(self) -> T {$/;"	f
+replace	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn replace(&mut self, idx: usize, e: Slot<T>) -> Option<T> {$/;"	f
+replace	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn replace(&mut self, val: T) -> T {$/;"	f
+replace_with	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn replace_with<F>(&mut self, f: F)$/;"	f
 reregister	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/channel.rs	/^    fn reregister(&self, poll: &Poll, token: Token, interest: Ready, opts: PollOpt) -> io::Result<()> {$/;"	f
 reregister	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn reregister<E: ?Sized>(&mut self, io: &E, token: Token, interest: Ready, opt: PollOpt) -> io::Result<()>$/;"	f
 reregister	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    fn reregister(&self, poll: &Poll, token: Token, interest: Ready, opts: PollOpt) -> io::Result<()> {$/;"	f
@@ -1117,14 +1553,23 @@ reregister	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 reregister_handle	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub unsafe fn reregister_handle(&self,$/;"	f
 reregister_socket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn reregister_socket(&mut self,$/;"	f
 reregister_socket	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub unsafe fn reregister_socket(&self,$/;"	f
+reserve_exact	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn reserve_exact(&mut self, additional: usize) {$/;"	f
+reset	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn reset(&mut self) -> io::Result<()> {$/;"	f
+reset	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn reset(&mut self) -> io::Result<()>;$/;"	f
 resume	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^        extern "C" fn resume(t: Transfer) -> ! {$/;"	f
 resume	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    pub fn resume(self, data: usize) -> Transfer {$/;"	f
+resume	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn resume(&mut self) {$/;"	f
 resume_ontop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^        extern "C" fn resume_ontop(mut t: Transfer) -> Transfer {$/;"	f
 resume_ontop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn resume_ontop() {$/;"	f
 resume_ontop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    pub fn resume_ontop(self, data: usize, f: ResumeOntopFn) -> Transfer {$/;"	f
+retain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn retain<F>(&mut self, mut f: F)$/;"	f
+root	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn root<T>(values: OwnedKV<T>) -> Self$/;"	f
+root	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn root<T>(drain: D, values: OwnedKV<T>) -> Logger$/;"	f
+root_typed	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn root_typed<T>(drain: D, values: OwnedKV<T>) -> Logger<D>$/;"	f
 run	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn run(&mut self, handler: &mut H) -> io::Result<()> {$/;"	f
 run	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn run(&mut self) {$/;"	f
 run_once	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn run_once(&mut self, handler: &mut H, timeout: Option<Duration>) -> io::Result<()> {$/;"	f
+s	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^macro_rules! s($/;"	d
 schedule_accept	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_accept(&self, me: &mut ListenerInner) {$/;"	f
 schedule_connect	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_connect(&self, addr: &SocketAddr) -> io::Result<()> {$/;"	f
 schedule_read	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_read(&self, me: &mut StreamInner) {$/;"	f
@@ -1144,12 +1589,19 @@ send	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net
 send	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn send(&self, buf: &[u8]) -> io::Result<usize> {$/;"	f
 send	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn send(&self, buf: &[u8]) -> io::Result<usize> {$/;"	f
 send	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    pub fn send(&self, buf: &[u8])$/;"	f
-send	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn send(&self, msg : LoopMsg) {$/;"	f
+send	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn send(&self, r: AsyncRecord) -> AsyncResult<()> {$/;"	f
+send	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn send(&self, msg: LoopMsg) {$/;"	f
 send_done	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^fn send_done(status: &OVERLAPPED_ENTRY) {$/;"	f
 send_to	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn send_to(&self, buf: &[u8], target: &SocketAddr) -> io::Result<usize> {$/;"	f
 send_to	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn send_to(&self, buf: &[u8], target: &SocketAddr) -> io::Result<usize> {$/;"	f
 send_to	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn send_to(&self, buf: &[u8], target: &SocketAddr)$/;"	f
 send_to	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    pub fn send_to(&self, buf: &[u8], target: &SocketAddr)$/;"	f
+ser	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^pub mod ser {$/;"	m
+serialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^            fn serialize(&self,$/;"	f
+serialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn serialize(&self, record: &Record, key: Key, serializer: &mut Serializer)$/;"	f
+serialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn serialize(&self,$/;"	f
+serialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn serialize<'b, S: 'b + Value>(mut self, s: S) -> Result {$/;"	f
+serialize	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^            fn serialize(&self,$/;"	f
 set	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn set(&mut self, val: usize, mask: usize, shift: usize) {$/;"	f
 set_broadcast	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn set_broadcast(&self, on: bool) -> io::Result<()> {$/;"	f
 set_broadcast	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn set_broadcast(&self, on: bool) -> io::Result<()> {$/;"	f
@@ -1196,16 +1648,33 @@ set_ttl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/
 set_ttl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn set_ttl(&self, ttl: u32) -> io::Result<()> {$/;"	f
 set_ttl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn set_ttl(&self, ttl: u32) -> io::Result<()> {$/;"	f
 set_ttl	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    pub fn set_ttl(&self, ttl: u32) -> io::Result<()> {$/;"	f
+should_use_color	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn should_use_color(&self) -> bool {$/;"	f
 shutdown	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn shutdown(&mut self) {$/;"	f
 shutdown	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn shutdown(&self, how: Shutdown) -> io::Result<usize> {$/;"	f
 shutdown	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn shutdown(&self, how: Shutdown) -> io::Result<()> {$/;"	f
 shutdown	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^    pub fn shutdown(&self, how: net::Shutdown) -> io::Result<()> {$/;"	f
 shutdown	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    pub fn shutdown(&self, how: Shutdown) -> io::Result<()> {$/;"	f
 shutdown	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn shutdown(&self, how: Shutdown) -> io::Result<()> {$/;"	f
+simple_logger_erased	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^fn simple_logger_erased() {$/;"	f
 sleep_marker	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn sleep_marker(&self) -> *mut ReadinessNode {$/;"	f
+slog::ser::Serializer for CompactFormatSerializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> slog::ser::Serializer for CompactFormatSerializer<'a> {$/;"	i
+slog::ser::Serializer for Serializer	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a> slog::ser::Serializer for Serializer<'a> {$/;"	i
+slog_b	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_b($/;"	d
+slog_crit	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_crit($/;"	d
+slog_debug	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_debug($/;"	d
+slog_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_error($/;"	d
+slog_info	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_info($/;"	d
+slog_kv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_kv($/;"	d
+slog_log	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_log($/;"	d
+slog_o	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_o($/;"	d
+slog_record	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_record($/;"	d
+slog_record_static	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_record_static($/;"	d
+slog_trace	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_trace($/;"	d
+slog_warn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! slog_warn($/;"	d
 slot_for	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn slot_for(&self, tick: Tick) -> usize {$/;"	f
 smoke	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^    fn smoke() {$/;"	f
 sockaddr_un	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^unsafe fn sockaddr_un(path: &Path)$/;"	f
+some	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^macro_rules! some {$/;"	d
 spawn	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn spawn<F, T>(&self, f: F)$/;"	f
 spawn	/home/dpc/lab/rust/miofib/src/lib.rs	/^pub fn spawn<F, T>(f: F)$/;"	f
 spawn_wakeup_thread	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^fn spawn_wakeup_thread(state: WakeupState, set_readiness: SetReadiness, start: Instant, tick_ms: u64) -> thread::JoinHandle<()> {$/;"	f
@@ -1213,6 +1682,19 @@ stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/sr
 stack_alignment	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn stack_alignment() {$/;"	f
 stack_size_too_large	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    fn stack_size_too_large() {$/;"	f
 stack_size_too_small	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    fn stack_size_too_small() {$/;"	f
+start_comma	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_comma(&mut self) -> io::Result<()> {$/;"	f
+start_key	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_key(&mut self) -> io::Result<()> {$/;"	f
+start_level	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_level(&mut self) -> io::Result<()> {$/;"	f
+start_msg	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_msg(&mut self) -> io::Result<()> {$/;"	f
+start_separator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_separator(&mut self) -> io::Result<()> {$/;"	f
+start_timestamp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_timestamp(&mut self) -> io::Result<()> {$/;"	f
+start_value	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_value(&mut self) -> io::Result<()> {$/;"	f
+start_whitespace	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn start_whitespace(&mut self) -> io::Result<()> {$/;"	f
+std::error::Error for Error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl std::error::Error for Error {$/;"	i
+std::error::Error for MutexDrainError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<D> std::error::Error for MutexDrainError<D>$/;"	i
+std_only	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^mod std_only {$/;"	m
+stderr	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn stderr(mut self) -> Self {$/;"	f
+stdout	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn stdout(mut self) -> Self {$/;"	f
 stream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn stream() -> io::Result<UnixSocket> {$/;"	f
 stream	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    pub fn stream() -> io::Result<UnixSocket> {$/;"	f
 sub	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    fn sub(self, other: PollOpt) -> PollOpt {$/;"	f
@@ -1223,6 +1705,7 @@ sync_channel	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6
 sys	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/lib.rs	/^mod sys;$/;"	m
 sys	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^mod sys;$/;"	m
 sys	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^mod sys;$/;"	m
+tag	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn tag(&self) -> &str {$/;"	f
 take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn take_error(&self) -> io::Result<Option<io::Error>> {$/;"	f
 take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn take_error(&self) -> io::Result<Option<io::Error>> {$/;"	f
 take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^    pub fn take_error(&self) -> io::Result<Option<io::Error>> {$/;"	f
@@ -1230,13 +1713,18 @@ take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn take_error(&self) -> io::Result<Option<io::Error>> {$/;"	f
 take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    pub fn take_error(&self) -> io::Result<Option<io::Error>> {$/;"	f
 take_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/udp.rs	/^    pub fn take_error(&self) -> io::Result<Option<io::Error>> {$/;"	f
+takes_arced_drain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    fn takes_arced_drain(_l: Logger) {}$/;"	f
 tcp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^pub mod tcp {$/;"	m
 tcp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/mod.rs	/^mod tcp;$/;"	m
 tcp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/mod.rs	/^mod tcp;$/;"	m
 tcp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^mod tcp;$/;"	m
+term_compact	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub fn term_compact() -> CompactFormat<TermDecorator> {$/;"	f
+term_error_to_io_error	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^fn term_error_to_io_error(e: term::Error) -> io::Error {$/;"	f
+term_full	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub fn term_full() -> FullFormat<TermDecorator> {$/;"	f
 test	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^mod test {$/;"	m
 test	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^mod test {$/;"	m
 test	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^mod test {$/;"	m
+test_accessing_out_of_bounds	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_accessing_out_of_bounds() {$/;"	f
 test_arg0	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^	fn test_arg0() {$/;"	f
 test_arg0	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^	fn test_arg0() {$/;"	f
 test_arg1	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^	fn test_arg1() {$/;"	f
@@ -1251,9 +1739,38 @@ test_arg4_diverging	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/bo
 test_arg4_diverging	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^	fn test_arg4_diverging() {$/;"	f
 test_arg4_void	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/no_send.rs	/^	fn test_arg4_void() {$/;"	f
 test_arg4_void	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/send.rs	/^	fn test_arg4_void() {$/;"	f
+test_capacity_too_large1	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_capacity_too_large1() {$/;"	f
+test_capacity_too_large_in_reserve_exact	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_capacity_too_large_in_reserve_exact() {$/;"	f
+test_clear	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_clear() {$/;"	f
+test_contains	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_contains() {$/;"	f
+test_get	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_get() {$/;"	f
+test_get_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_get_mut() {$/;"	f
+test_index_trait	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_index_trait() {$/;"	f
+test_insert_with	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_insert_with() {$/;"	f
+test_insertion	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_insertion() {$/;"	f
+test_insertion_when_full	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_insertion_when_full() {$/;"	f
+test_iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_iter() {$/;"	f
+test_iter_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_iter_mut() {$/;"	f
+test_mut_retrieval	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_mut_retrieval() {$/;"	f
+test_o_macro_expansion	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    fn test_o_macro_expansion() {$/;"	f
+test_removal_at_boundries	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_removal_at_boundries() {$/;"	f
+test_removal_is_successful	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_removal_is_successful() {$/;"	f
+test_remove_empty_entry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_remove_empty_entry() {$/;"	f
+test_repeated_insertion	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_repeated_insertion() {$/;"	f
+test_repeated_insertion_and_removal	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_repeated_insertion_and_removal() {$/;"	f
+test_replace	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_replace() {$/;"	f
+test_replace_again	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_replace_again() {$/;"	f
+test_replace_with	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_replace_with() {$/;"	f
+test_reserve_exact	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_reserve_exact() {$/;"	f
+test_retain	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_retain() {$/;"	f
+test_reusing_slots_1	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_reusing_slots_1() {$/;"	f
+test_reusing_slots_2	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    fn test_reusing_slots_2() {$/;"	f
+test_slog_o_macro_expansion	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/tests.rs	/^    fn test_slog_o_macro_expansion() {$/;"	f
 tests	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^mod tests {$/;"	m
 tests	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^mod tests {$/;"	m
 tests	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^mod tests {$/;"	m
+tests	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^mod tests {$/;"	m
+tests	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^mod tests;$/;"	m
 tests	/home/dpc/lab/rust/miofib/src/lib.rs	/^mod tests {$/;"	m
 tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/handler.rs	/^    fn tick(&mut self, event_loop: &mut EventLoop<Self>) {$/;"	f
 tick_duration	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn tick_duration(mut self, duration: Duration) -> Builder {$/;"	f
@@ -1265,13 +1782,18 @@ timer_process	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.
 timer_tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn timer_tick(&mut self, val: Duration) -> &mut Self {$/;"	f
 timer_wheel_size	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn timer_wheel_size(&mut self, size: usize) -> &mut Self {$/;"	f
 times_two	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/lazy_static-0.2.6/src/lib.rs	/^fn times_two(n: u32) -> u32 { n * 2 }$/;"	f
+timestamp_local	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub fn timestamp_local(io: &mut io::Write) -> io::Result<()> {$/;"	f
+timestamp_utc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^pub fn timestamp_utc(io: &mut io::Write) -> io::Result<()> {$/;"	f
+to_erased	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    pub fn to_erased$/;"	f
 token	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn token(&self) -> Token {$/;"	f
 token	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^mod token;$/;"	m
 token	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^unsafe fn token(node: &ReadinessNode, pos: usize) -> Token {$/;"	f
 token_read_pos	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn token_read_pos(&self) -> usize {$/;"	f
 token_write_pos	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn token_write_pos(&self) -> usize {$/;"	f
 top	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^    pub fn top(&self) -> *mut c_void {$/;"	f
+trace	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! trace($/;"	d
 traits	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/lib.rs	/^mod traits;$/;"	m
+try_build	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn try_build(self) -> Option<TermDecorator> {$/;"	f
 try_clone	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn try_clone(&self) -> io::Result<UnixListener> {$/;"	f
 try_clone	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn try_clone(&self) -> io::Result<UnixSocket> {$/;"	f
 try_clone	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn try_clone(&self) -> io::Result<UnixStream> {$/;"	f
@@ -1321,10 +1843,15 @@ update	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/p
 update	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn update(&self, poll: &Poll, token: Token, interest: Ready, opts: PollOpt) -> io::Result<()> {$/;"	f
 update_token_read_pos	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn update_token_read_pos(&mut self) {$/;"	f
 urgent	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn urgent() -> PollOpt {$/;"	f
+use_custom_timestamp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn use_custom_timestamp<F>(mut self, f: F) -> Self$/;"	f
+use_local_timestamp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn use_local_timestamp(mut self) -> Self {$/;"	f
+use_utc_timestamp	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn use_utc_timestamp(mut self) -> Self {$/;"	f
+vacant_entry	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn vacant_entry(&mut self) -> Option<VacantEntry<T, I>> {$/;"	f
 validate_args	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^fn validate_args(token: Token, interest: Ready) -> io::Result<()> {$/;"	f
 wakeup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn wakeup(&self) -> io::Result<()> {$/;"	f
 wakeup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/awakener.rs	/^        pub fn wakeup(&self) -> io::Result<()> {$/;"	f
 wakeup	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/awakener.rs	/^    pub fn wakeup(&self) -> io::Result<()> {$/;"	f
+warn	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! warn($/;"	d
 windows	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/mod.rs	/^mod windows;$/;"	m
 windows	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/sys/mod.rs	/^mod windows;$/;"	m
 windows	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^pub mod windows {$/;"	m
@@ -1333,6 +1860,8 @@ with_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.
 with_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^    pub fn with_capacity(u: usize) -> Events {$/;"	f
 with_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^    pub fn with_capacity(cap: usize) -> Events {$/;"	f
 with_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn with_capacity(cap: usize) -> Events {$/;"	f
+with_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/src/lib.rs	/^    pub fn with_capacity(capacity: usize) -> Slab<T, I> {$/;"	f
+with_record	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn with_record<F>(&self,$/;"	f
 would_block	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/io.rs	/^    pub fn would_block() -> ::std::io::Error {$/;"	f
 would_block	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^pub fn would_block() -> ::std::io::Error {$/;"	f
 would_block	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^pub fn would_block() -> ::std::io::Error {$/;"	f
@@ -1344,6 +1873,8 @@ write	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sy
 write	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^    fn write(&mut self, buf: &[u8]) -> io::Result<usize> {$/;"	f
 write	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/uds.rs	/^    fn write(&mut self, buf: &[u8]) -> io::Result<usize> {$/;"	f
 write	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn write(&self, buf: &[u8]) -> io::Result<usize> {$/;"	f
+write	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn write(&mut self, buf: &[u8]) -> io::Result<usize> {$/;"	f
+write_all	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn write_all(&mut self, buf: &[u8]) -> io::Result<()> {$/;"	f
 write_bufs	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/tcp.rs	/^    pub fn write_bufs(&self, bufs: &[&IoVec]) -> io::Result<usize> {$/;"	f
 write_done	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^fn write_done(status: &OVERLAPPED_ENTRY) {$/;"	f
 write_send_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/unix.rs	/^    pub fn write_send_fd(&mut self, buf: &[u8], fd: RawFd) -> io::Result<usize> {$/;"	f
