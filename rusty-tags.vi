@@ -122,6 +122,8 @@ Events	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/s
 FILE_SKIP_COMPLETION_PORT_ON_SUCCESS	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^    const FILE_SKIP_COMPLETION_PORT_ON_SUCCESS: winapi::UCHAR = 1;$/;"	c
 FILE_SKIP_SET_EVENT_ON_HANDLE	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^    const FILE_SKIP_SET_EVENT_ON_HANDLE: winapi::UCHAR = 2;$/;"	c
 Family	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/mod.rs	/^enum Family {$/;"	g
+Fiber	/home/dpc/lab/rust/miofib/src/lib.rs	/^impl Fiber {$/;"	i
+Fiber	/home/dpc/lab/rust/miofib/src/lib.rs	/^struct Fiber {$/;"	s
 FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl FixedSizeStack {$/;"	i
 FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^pub struct FixedSizeStack(Stack);$/;"	s
 FnBox	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/boxfnonce-0.0.3/src/traits.rs	/^pub trait FnBox<Arguments, Result> {$/;"	t
@@ -330,6 +332,7 @@ SelectorId	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/s
 SelectorId	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^pub struct SelectorId {$/;"	s
 SelectorInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^impl SelectorInner {$/;"	i
 SelectorInner	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^struct SelectorInner {$/;"	s
+Send for Fiber	/home/dpc/lab/rust/miofib/src/lib.rs	/^unsafe impl Send for Fiber {}$/;"	i
 Send for FromRawArc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^unsafe impl<T: Sync + Send> Send for FromRawArc<T> { }$/;"	i
 Send for KeventList	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/kqueue.rs	/^unsafe impl Send for KeventList {}$/;"	i
 Send for Overlapped	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^unsafe impl Send for Overlapped {}$/;"	i
@@ -834,7 +837,7 @@ is_urgent	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 is_urgent	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^fn is_urgent(_: PollOpt) -> bool {$/;"	f
 is_urgent	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^fn is_urgent(opts: PollOpt) -> bool {$/;"	f
 is_writable	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn is_writable(&self) -> bool {$/;"	f
-it_works	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn it_works() {}$/;"	f
+it_works	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn it_works() {$/;"	f
 iter	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn iter(&self) -> Iter {$/;"	f
 join_multicast_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/net/udp.rs	/^    pub fn join_multicast_v4(&self,$/;"	f
 join_multicast_v4	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/udp.rs	/^    pub fn join_multicast_v4(&self,$/;"	f
@@ -949,6 +952,7 @@ new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new() -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(rx: LoopRx) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(rx: mpsc::Receiver<LoopMsg>, reg: mio::Registration) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(tx: mpsc::Sender<LoopMsg>, ctrl: mio::SetReadiness) -> Self {$/;"	f
+new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new<F, T>(f: F) -> Self$/;"	f
 new2	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn new2() -> (Registration, SetReadiness) {$/;"	f
 new_family	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn new_family(socket: net::TcpListener, family: Family) -> TcpListener {$/;"	f
 new_priv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn new_priv(poll: &Poll, token: Token, interest: Ready, opt: PollOpt)$/;"	f
@@ -1017,6 +1021,7 @@ port	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys
 post_register	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn post_register(&self, interest: Ready, me: &mut StreamInner) {$/;"	f
 post_register	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    fn post_register(&self, interest: Ready, me: &mut Inner) {$/;"	f
 prepare_for_sleep	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn prepare_for_sleep(&self) -> bool {$/;"	f
+printerrln	/home/dpc/lab/rust/miofib/src/lib.rs	/^macro_rules! printerrln {$/;"	d
 protect_stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^pub fn protect_stack(stack: &Stack) -> io::Result<Stack> {$/;"	f
 protect_stack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/windows/mod.rs	/^pub fn protect_stack(stack: &Stack) -> io::Result<Stack> {$/;"	f
 push_event	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/epoll.rs	/^    pub fn push_event(&mut self, event: Event) {$/;"	f
@@ -1118,7 +1123,7 @@ resume_ontop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1
 resume_ontop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn resume_ontop() {$/;"	f
 resume_ontop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    pub fn resume_ontop(self, data: usize, f: ResumeOntopFn) -> Transfer {$/;"	f
 run	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn run(&mut self, handler: &mut H) -> io::Result<()> {$/;"	f
-run	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn run(&self) {}$/;"	f
+run	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn run(&mut self) {$/;"	f
 run_once	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn run_once(&mut self, handler: &mut H, timeout: Option<Duration>) -> io::Result<()> {$/;"	f
 schedule_accept	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_accept(&self, me: &mut ListenerInner) {$/;"	f
 schedule_connect	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_connect(&self, addr: &SocketAddr) -> io::Result<()> {$/;"	f
