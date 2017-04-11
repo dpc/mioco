@@ -28,6 +28,7 @@ AsyncCore	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2
 AsyncCoreBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl<D> AsyncCoreBuilder<D>$/;"	i
 AsyncCoreBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub struct AsyncCoreBuilder<D>$/;"	s
 AsyncError	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub enum AsyncError {$/;"	g
+AsyncIO	/home/dpc/lab/rust/miofib/src/lib.rs	/^struct AsyncIO<T>$/;"	s
 AsyncMsg	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^enum AsyncMsg {$/;"	g
 AsyncRecord	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^struct AsyncRecord {$/;"	s
 AsyncResult	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^pub type AsyncResult<T> = std::result::Result<T, AsyncError>;$/;"	T
@@ -111,6 +112,7 @@ Drop for Async	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-as
 Drop for AsyncCore	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^impl Drop for AsyncCore {$/;"	i
 Drop for FixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Drop for FixedSizeStack {$/;"	i
 Drop for FromRawArc	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^impl<T> Drop for FromRawArc<T> {$/;"	i
+Drop for Miofib	/home/dpc/lab/rust/miofib/src/lib.rs	/^impl Drop for Miofib {$/;"	i
 Drop for PlainRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<'a, W> Drop for PlainRecordDecorator<'a, W>$/;"	i
 Drop for PlainSyncRecordDecorator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^impl<W> Drop for PlainSyncRecordDecorator<W>$/;"	i
 Drop for ProtectedFixedSizeStack	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/stack.rs	/^impl Drop for ProtectedFixedSizeStack {$/;"	i
@@ -154,6 +156,8 @@ EventLoop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/sr
 EventLoopBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^impl EventLoopBuilder {$/;"	i
 EventLoopBuilder	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^pub struct EventLoopBuilder {$/;"	s
 Evented	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^pub trait Evented {$/;"	t
+Evented	/home/dpc/lab/rust/miofib/src/lib.rs	/^pub trait Evented {$/;"	t
+Evented for AsyncIO	/home/dpc/lab/rust/miofib/src/lib.rs	/^impl<T> Evented for AsyncIO<T>$/;"	i
 Evented for Awakener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/awakener.rs	/^    impl Evented for Awakener {$/;"	i
 Evented for Awakener	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/awakener.rs	/^impl Evented for Awakener {$/;"	i
 Evented for EventedFd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/eventedfd.rs	/^impl<'a> Evented for EventedFd<'a> {$/;"	i
@@ -581,6 +585,9 @@ TERMINATE_THREAD	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0
 TICK_MAX	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^const TICK_MAX: Tick = u64::MAX;$/;"	c
 TIMER	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^const TIMER: Token = Token(usize::MAX - 2);$/;"	c
 TIMESTAMP_FORMAT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^const TIMESTAMP_FORMAT: &'static str = "%b %d %H:%M:%S%.3f";$/;"	c
+TL_CUR_TRANSFER	/home/dpc/lab/rust/miofib/src/lib.rs	/^    pub static TL_CUR_TRANSFER: UnsafeCell<RefCell<Option<context::Transfer>>> = UnsafeCell::new(RefCell::new(None));$/;"	c
+TL_FIBER_ID	/home/dpc/lab/rust/miofib/src/lib.rs	/^    pub static TL_FIBER_ID: UnsafeCell<usize> =$/;"	c
+TL_LOOP_ID	/home/dpc/lab/rust/miofib/src/lib.rs	/^    pub static TL_LOOP_ID: UnsafeCell<usize> =$/;"	c
 TOKEN_RD_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const TOKEN_RD_SHIFT: usize = 12;$/;"	c
 TOKEN_WR_SHIFT	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^const TOKEN_WR_SHIFT: usize = 14;$/;"	c
 TYPE	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/sys/unix/mod.rs	/^    const TYPE: libc::c_int = libc::MAP_PRIVATE | libc::MAP_ANON | MAP_STACK;$/;"	c
@@ -821,7 +828,7 @@ contains	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.3.0/sr
 context	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/lib.rs	/^pub mod context;$/;"	m
 context_function	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^        extern "C" fn context_function(mut t: Transfer) -> ! {$/;"	f
 context_function	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^        extern "C" fn context_function(t: Transfer) -> ! {$/;"	f
-context_function	/home/dpc/lab/rust/miofib/src/lib.rs	/^        extern "C" fn context_function(mut t: context::Transfer) -> ! {$/;"	f
+context_function	/home/dpc/lab/rust/miofib/src/lib.rs	/^        extern "C" fn context_function(t: context::Transfer) -> ! {$/;"	f
 convert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib.rs	/^mod convert {$/;"	m
 convert	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^impl<T> convert::From<OwnedKV<T>> for OwnedKVList$/;"	i
 convert_mut	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/lib.rs	/^    fn convert_mut() {$/;"	f
@@ -903,6 +910,7 @@ drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys
 drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^    fn drop(&mut self) {$/;"	f
 drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-async-2.0.0-3.0/lib.rs	/^    fn drop(&mut self) {$/;"	f
 drop	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    fn drop(&mut self) {$/;"	f
+drop	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn drop(&mut self) {$/;"	f
 drops	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/from_raw_arc.rs	/^    fn drops() {$/;"	f
 duration_to_tick	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^fn duration_to_tick(elapsed: Duration, tick_ms: u64) -> Tick {$/;"	f
 edge	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/event_imp.rs	/^    pub fn edge() -> PollOpt {$/;"	f
@@ -1371,10 +1379,10 @@ new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.
 new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn new(d: D) -> FullFormatBuilder<D> {$/;"	f
 new	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^    pub fn new(io: W) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new() -> Self {$/;"	f
-new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(loop_id: usize, rx: LoopRx, log: &Logger) -> Self {$/;"	f
+new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(id: usize, rx: LoopRx, log: &Logger) -> (Self, mio::Poll) {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(rx: mpsc::Receiver<LoopMsg>, reg: mio::Registration) -> Self {$/;"	f
 new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new(tx: mpsc::Sender<LoopMsg>, ctrl: mio::SetReadiness) -> Self {$/;"	f
-new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new<F, T>(f: F, log : &Logger) -> Self$/;"	f
+new	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn new<F, T>(f: F, log: &Logger) -> Self$/;"	f
 new2	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn new2() -> (Registration, SetReadiness) {$/;"	f
 new_family	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn new_family(socket: net::TcpListener, family: Family) -> TcpListener {$/;"	f
 new_priv	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn new_priv(poll: &Poll, token: Token, interest: Ready, opt: PollOpt)$/;"	f
@@ -1398,6 +1406,8 @@ notify	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/d
 notify	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/handler.rs	/^    fn notify(&mut self, event_loop: &mut EventLoop<Self>, msg: Self::Message) {$/;"	f
 notify	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/mod.rs	/^mod notify;$/;"	m
 notify_capacity	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn notify_capacity(&mut self, capacity: usize) -> &mut Self {$/;"	f
+notify_on	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn notify_on(&mut self, interest: mio::Ready) {$/;"	f
+notify_on	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn notify_on(&mut self, interest: mio::Ready);$/;"	f
 num_slots	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn num_slots(mut self, num_slots: usize) -> Builder {$/;"	f
 number_generator	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/context-1.0.0/src/context.rs	/^    fn number_generator() {$/;"	f
 o	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-2.0.0-3.1/src/lib.rs	/^macro_rules! o($/;"	d
@@ -1440,10 +1450,12 @@ poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/lib
 poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn poll(&self, dst: &mut sys::Events) {$/;"	f
 poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    pub fn poll(&self, events: &mut Events, mut timeout: Option<Duration>) -> io::Result<usize> {$/;"	f
 poll	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    pub fn poll(&mut self) -> Option<T> {$/;"	f
+poll	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn poll(&self, i: usize) -> &mio::Poll {$/;"	f
 poll2	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn poll2(&self, events: &mut Events, timeout: Option<Duration>) -> io::Result<usize> {$/;"	f
 poll_opt	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/poll.rs	/^    fn poll_opt(&self) -> PollOpt {$/;"	f
 poll_queue	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn poll_queue(&mut self) {$/;"	f
 poll_to	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/timer.rs	/^    fn poll_to(&mut self, mut target_tick: Tick) -> Option<T> {$/;"	f
+pop_transfer	/home/dpc/lab/rust/miofib/src/lib.rs	/^fn pop_transfer() -> context::Transfer {$/;"	f
 port	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/selector.rs	/^    pub fn port(&self) -> &CompletionPort {$/;"	f
 post_register	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn post_register(&self, interest: Ready, me: &mut StreamInner) {$/;"	f
 post_register	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/udp.rs	/^    fn post_register(&self, interest: Ready, me: &mut Inner) {$/;"	f
@@ -1570,6 +1582,7 @@ run	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/depr
 run	/home/dpc/lab/rust/miofib/src/lib.rs	/^    fn run(&mut self) {$/;"	f
 run_once	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/deprecated/event_loop.rs	/^    pub fn run_once(&mut self, handler: &mut H, timeout: Option<Duration>) -> io::Result<()> {$/;"	f
 s	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/slog-term-2.0.0-3.0/src/lib.rs	/^macro_rules! s($/;"	d
+save_transfer	/home/dpc/lab/rust/miofib/src/lib.rs	/^fn save_transfer(t: context::Transfer) {$/;"	f
 schedule_accept	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_accept(&self, me: &mut ListenerInner) {$/;"	f
 schedule_connect	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_connect(&self, addr: &SocketAddr) -> io::Result<()> {$/;"	f
 schedule_read	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    fn schedule_read(&self, me: &mut StreamInner) {$/;"	f
@@ -1882,3 +1895,4 @@ write_send_fd	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.
 writev	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/unix/tcp.rs	/^    pub fn writev(&self, bufs: &[&IoVec]) -> io::Result<usize> {$/;"	f
 writev	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/mio-0.6.6/src/sys/windows/tcp.rs	/^    pub fn writev(&self, bufs: &[&IoVec]) -> io::Result<usize> {$/;"	f
 wsabuf	/home/dpc/.cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.0/src/sys/windows.rs	/^    unsafe fn wsabuf(&self) -> WSABUF {$/;"	f
+yield_now	/home/dpc/lab/rust/miofib/src/lib.rs	/^pub fn yield_now() {$/;"	f
