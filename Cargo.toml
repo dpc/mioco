@@ -7,8 +7,7 @@ authors = ["Dawid Ciężarkiewicz <dpc@dpc.pw>"]
 mio = "0.6.6"
 lazy_static = "*"
 context = "1"
-boxfnonce = "*"
-slog = "~2.0.0-3"
-slog-term = "~2.0.0-3"
-slog-async = "~2.0.0-3"
+slog = { version = "2", features = ["max_level_trace", "release_max_level_debug"] }
+slog-term = "~2.0.0-4"
+slog-async = "2"
 slab = "*"

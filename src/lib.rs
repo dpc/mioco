@@ -2,7 +2,6 @@ extern crate mio;
 #[macro_use]
 extern crate lazy_static;
 extern crate context;
-extern crate boxfnonce;
 #[macro_use]
 extern crate slog;
 extern crate slog_term;
@@ -11,14 +10,19 @@ extern crate slab;
 
 use slog::{Logger, Drain};
 
-use std::{mem, thread};
-use std::cell::{UnsafeCell, RefCell};
+use std::{mem, thread, io};
+use std::cell::{Cell, UnsafeCell, RefCell};
 
 use std::sync::{mpsc, Mutex};
 use std::sync::atomic::{AtomicUsize, Ordering};
 
 use context::stack;
 use slab::Slab;
+
+mod thunk;
+use thunk::Thunk;
+
+pub mod net;
 
 // {{{ Misc
 macro_rules! printerrln {
@@ -37,8 +41,9 @@ macro_rules! printerrln {
 fn miofib_logger() -> Logger {
     let decorator = slog_term::TermDecorator::new().build();
     let drain = slog_term::FullFormat::new(decorator).build().fuse();
-    let drain = slog_async::Async::new(drain).build().fuse();
+    //    let drain = slog_async::Async::new(drain).build().fuse();
 
+    let drain = std::sync::Mutex::new(drain).fuse();
     slog::Logger::root(drain, o!("miofib" => env!("CARGO_PKG_VERSION") ))
 }
 // }}}
@@ -71,8 +76,8 @@ impl Drop for Miofib {
 impl Miofib {
     fn new() -> Self {
         let log = miofib_logger();
-        info!(log, "Creating miofib instance");
-        let (txs, mut joins_and_polls): (_, Vec<(_, _)>) = (0..1)
+        debug!(log, "Creating miofib instance");
+        let (txs, mut joins_and_polls): (_, Vec<(_, _)>) = (0..8)
             .map(|i| {
                      let (tx, rx) = channel();
                      let (mut loop_, mio_loop) = Loop::new(i, rx, &log);
@@ -112,33 +117,54 @@ impl Miofib {
 
 // {{{ Fiber
 thread_local! {
-    // TODO: UnsafeCell is most probably redundant with RefCell here
-    pub static TL_CUR_TRANSFER: UnsafeCell<RefCell<Option<context::Transfer>>> = UnsafeCell::new(RefCell::new(None));
+    pub static TL_CUR_TRANSFER: RefCell<Option<context::Transfer>> = RefCell::new(None);
 }
 
 fn save_transfer(t: context::Transfer) {
     TL_CUR_TRANSFER.with(|cur_t| {
-        let cur_transfer : &mut RefCell<Option<context::Transfer>> = unsafe { &mut *cur_t.get() } ;
-        let mut cur_transfer = cur_transfer.borrow_mut();
+        let mut cur_transfer = cur_t.borrow_mut();
         debug_assert!(cur_transfer.is_none());
 
         *cur_transfer = Some(t);
-    })
+    });
 }
 
 fn pop_transfer() -> context::Transfer {
     TL_CUR_TRANSFER.with(|cur_t| {
-        let cur_transfer : &mut RefCell<Option<context::Transfer>> = unsafe { &mut *cur_t.get() } ;
-        let mut cur_transfer = cur_transfer.borrow_mut();
+        let mut cur_transfer = cur_t.borrow_mut();
 
         cur_transfer.take().expect("pop_transfer")
-    })
+     })
+}
+
+fn co_switch_out() {
+    let t = pop_transfer().context.resume(0);
+    save_transfer(t);
 }
 
 struct Fiber {
     cur_context: Option<context::Context>,
-    stack: stack::ProtectedFixedSizeStack,
-    log: Logger,
+    _stack: stack::ProtectedFixedSizeStack,
+    finished: bool,
+}
+
+extern "C" fn context_function(t: context::Transfer) -> ! {
+    {
+        let f: Thunk<'static> = {
+            let cell : &RefCell<Option<Thunk<'static>>> = unsafe { mem::transmute(t.data) };
+            cell.borrow_mut().take().unwrap()
+        };
+
+        let t = t.context.resume(0);
+
+        save_transfer(t);
+
+        let _res = f.invoke(());
+    }
+
+    loop {
+        save_transfer(pop_transfer().context.resume(1));
+    }
 }
 
 impl Fiber {
@@ -149,48 +175,41 @@ impl Fiber {
         trace!(log, "spawning fiber");
 
         // Workaround for Box<FnOnce> not working
-        let mut f = UnsafeCell::new(Some(boxfnonce::SendBoxFnOnce::from(move || f())));
-
-        extern "C" fn context_function(t: context::Transfer) -> ! {
-
-            let f = {
-                let cell: &mut UnsafeCell<Option<boxfnonce::SendBoxFnOnce<(), ()>>> =
-                    unsafe { mem::transmute(t.data) };
-                unsafe { (*cell.get()).take() }.unwrap()
-            };
-
-            let t = t.context.resume(0);
-
-            save_transfer(t);
-
-            f.call();
-
-            pop_transfer().context.resume(1);
-
-            unreachable!();
-        }
+        let f : RefCell<Option<Thunk<'static>>> =
+            RefCell::new(Some(Thunk::new(move || { f(); })));
 
         let stack = stack::ProtectedFixedSizeStack::default();
 
         let context = context::Context::new(&stack, context_function);
-        let t = context.resume(&mut f as *mut _ as usize);
-        debug_assert!(unsafe { (&*f.get()) }.is_none());
+        let t = context.resume(&f as *const _ as usize);
+        debug_assert!(f.borrow().is_none());
 
         trace!(log, "fiber created");
         Fiber {
             cur_context: Some(t.context),
-            stack: stack,
-            log: log.clone(),
+            _stack: stack,
+            finished: false,
         }
     }
 
-    fn resume(&mut self) {
+    fn resume(&mut self, loop_id: usize, fiber_id: usize) {
+        TL_LOOP_ID.with(|id| id.set(loop_id));
+        TL_FIBER_ID.with(|id| id.set(fiber_id));
         let t = self.cur_context.take().unwrap().resume(0);
         self.cur_context = Some(t.context);
+        TL_LOOP_ID.with(|id| id.set(std::usize::MAX));
+        TL_FIBER_ID.with(|id| id.set(std::usize::MAX));
+
+        if t.data == 1 {
+            self.finished = true;
+        }
+    }
+
+    fn is_finished(&self) -> bool {
+        self.finished
     }
 }
 
-unsafe impl Send for Fiber {}
 // }}}
 
 // {{{ LoopChannel
@@ -251,6 +270,8 @@ struct Loop {
     log: Logger,
 }
 
+const QUEUE_TOKEN: usize = std::usize::MAX - 1;
+
 impl Loop {
     fn new(id: usize, rx: LoopRx, log: &Logger) -> (Self, mio::Poll) {
 
@@ -260,7 +281,7 @@ impl Loop {
         let poll = mio::Poll::new().unwrap();
 
         poll.register(&rx.rx_registration,
-                      mio::Token(0),
+                      mio::Token(QUEUE_TOKEN),
                       mio::Ready::readable(),
                       mio::PollOpt::edge())
             .unwrap();
@@ -277,36 +298,57 @@ impl Loop {
     fn run(&mut self) {
         let mut events = mio::Events::with_capacity(1024);
 
+        TL_LOOP_LOG.with(|log| unsafe { *log.get() = self.log.clone() });
         loop {
             trace!(self.log, "poll");
             let event_num = MIOFIB.poll(self.id).poll(&mut events, None).unwrap();
             trace!(self.log, "events"; "no" => event_num);
 
             for event in &events {
-                if event.token() == mio::Token(0) && event.readiness().is_readable() {
-                    trace!(self.log, "rx queue ready");
+                let token = event.token().0;
+                trace!(self.log, "received token"; "token" => token);
+                if token == QUEUE_TOKEN && event.readiness().is_readable() {
                     self.poll_queue();
                 } else {
-                    trace!(self.log, "different event"; "token" => event.token().0);
+                    if self.fibers.contains(token) {
+                        self.resume_fib(token)
+                    }
                 }
             }
         }
     }
 
     fn poll_queue(&mut self) {
-        while let Ok(msg) = self.rx.rx.try_recv() {
-            match msg {
-                LoopMsg::Spawn(fiber) => {
-                    match self.fibers.insert(fiber) {
-                        Ok(fib_i) => {
-                            trace!(self.log, "resuming"; "fiber-id" => fib_i);
-                            self.fibers[fib_i].resume();
+        loop {
+            match self.rx.rx.try_recv() {
+                Ok(msg) => match msg {
+                    LoopMsg::Spawn(fiber) => {
+                        match self.fibers.insert(fiber) {
+                            Ok(fib_i) => {
+                                trace!(self.log, "fiber spawned"; "fiber-id" => fib_i);
+                                self.resume_fib(fib_i);
+                            }
+                            Err(_fiber) => panic!("Ran out of slab"),
                         }
-                        Err(_fiber) => panic!("Run out of slab"),
                     }
-                }
 
+                },
+                Err(std::sync::mpsc::TryRecvError::Empty) => break,
+                Err(e) => {
+                    error!(self.log, "queue recv failed"; "err" => %e);
+                    panic!("queue recv failed");
+                }
             }
+        }
+    }
+
+    fn resume_fib(&mut self, fib_i: usize) {
+        trace!(self.log, "fiber resuming"; "fiber-id" => fib_i);
+        self.fibers[fib_i].resume(self.id, fib_i);
+        trace!(self.log, "fiber suspended"; "fiber-id" => fib_i);
+        if self.fibers[fib_i].is_finished() {
+            trace!(self.log, "fiber finished"; "fiber-id" => fib_i);
+            self.fibers.remove(fib_i);
         }
     }
 }
@@ -314,74 +356,156 @@ impl Loop {
 
 // {{{ Evented
 thread_local! {
-    // TODO: UnsafeCell is most probably redundant with RefCell here
-    pub static TL_FIBER_ID: UnsafeCell<usize> =
-        UnsafeCell::new(-1isize as usize);
-    pub static TL_LOOP_ID: UnsafeCell<usize> =
-        UnsafeCell::new(-1isize as usize);
+    pub static TL_FIBER_ID: Cell<usize> =
+        Cell::new(-1isize as usize);
+    pub static TL_LOOP_ID: Cell<usize> =
+        Cell::new(-1isize as usize);
+    pub static TL_LOOP_LOG: UnsafeCell<Logger> =
+        UnsafeCell::new(Logger::root(slog::Discard, o!()));
 }
 
 
 
 pub trait Evented {
-    fn notify_on(&mut self, interest: mio::Ready);
+    fn notify_on(&self, interest: mio::Ready);
+    fn block_on(&self, interest: mio::Ready) {
+        self.notify_on(interest);
+        co_switch_out();
+    }
 }
 
-//impl<T> Evented for T where T: mio::Evented {}
-
-struct AsyncIO<T>
+pub struct AsyncIO<T>
     where T: mio::Evented
 {
     io: T,
-    registered_on: Option<(usize, usize, mio::Ready)>,
+    registered_on: RefCell<Option<(usize, usize, mio::Ready)>>,
+}
+
+impl<T> AsyncIO<T>
+    where T: mio::Evented
+{
+    pub fn new(t: T) -> Self {
+        AsyncIO {
+            io: t,
+            registered_on: RefCell::new(None),
+        }
+    }
 }
 
 impl<T> Evented for AsyncIO<T>
     where T: mio::Evented
 {
-    // Handle out-of loop condition (cur_loop == -1?)
-    fn notify_on(&mut self, interest: mio::Ready) {
-        let cur_fiber = TL_FIBER_ID.with(|id| unsafe { *id.get() });
-        let cur_loop = TL_LOOP_ID.with(|id| unsafe { *id.get() });
-        match self.registered_on {
+    // TODO: Handle out-of loop condition (cur_loop == -1?)
+    fn notify_on(&self, interest: mio::Ready) {
+        let cur_fiber = TL_FIBER_ID.with(|id| id.get());
+        let cur_loop = TL_LOOP_ID.with(|id| id.get());
+        let log: &Logger = TL_LOOP_LOG.with(|log| unsafe { &*log.get() as &Logger });
+        let registered_on = *self.registered_on.borrow();
+        trace!(log, "notify on"; "fiber-id" => cur_fiber, "interest" =>
+               ?interest);
+        match registered_on {
             Some((my_loop, my_fiber, my_readiness)) => {
                 if cur_loop == my_loop {
                     if (cur_fiber, interest) != (my_fiber, my_readiness) {
+                        trace!(log, "reregister"; "fiber-id" => cur_fiber, "interest" => ?interest);
                         MIOFIB
                             .poll(cur_loop)
                             .reregister(&self.io,
                                         mio::Token(my_fiber),
                                         interest,
-                                        mio::PollOpt::oneshot())
+                                        mio::PollOpt::edge())
                             .unwrap();
-                        self.registered_on = Some((cur_loop, cur_fiber, interest));
+                        *self.registered_on.borrow_mut() = Some((cur_loop, cur_fiber, interest));
                     }
                 } else {
+                    trace!(log, "deregister"; "fiber-id" => cur_fiber,
+                           "interest" => ?interest,
+                           "old-fiber-id" => my_fiber,
+                           "old-loop" => my_loop
+                           );
                     MIOFIB.poll(my_loop).deregister(&self.io).unwrap();
+                    trace!(log, "register"; "fiber-id" => cur_fiber, "interest" => ?interest);
                     MIOFIB
                         .poll(cur_loop)
                         .register(&self.io,
                                   mio::Token(cur_fiber),
                                   interest,
-                                  mio::PollOpt::oneshot())
+                                  mio::PollOpt::edge())
                         .unwrap();
-                    self.registered_on = Some((cur_loop, cur_fiber, interest));
+                    *self.registered_on.borrow_mut() = Some((cur_loop, cur_fiber, interest));
                 }
             }
             None => {
+                trace!(log, "register"; "fiber-id" => cur_fiber, "interest" => ?interest);
                 MIOFIB
                     .poll(cur_loop)
                     .register(&self.io,
                               mio::Token(cur_fiber),
                               interest,
-                              mio::PollOpt::oneshot())
+                              mio::PollOpt::edge())
                     .unwrap();
-                self.registered_on = Some((cur_loop, cur_fiber, interest));
+                *self.registered_on.borrow_mut() = Some((cur_loop, cur_fiber, interest));
             }
         }
 
     }
 }
+
+impl<MT> io::Read for AsyncIO<MT>
+    where MT: mio::Evented + io::Read + 'static
+{
+    /// Block on read.
+    fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
+        loop {
+            let res = self.io.read(buf);
+
+            match res {
+                Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
+                    self.block_on(mio::Ready::readable())
+                }
+                res => {
+                    return res;
+                }
+            }
+        }
+    }
+}
+
+impl<MT> io::Write for AsyncIO<MT>
+    where MT: mio::Evented + 'static + io::Write
+{
+    /// Block on write.
+    fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+        loop {
+            let res = self.io.write(buf);
+
+            match res {
+                Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
+                    self.block_on(mio::Ready::writable())
+                }
+                res => {
+                    return res;
+                }
+            }
+        }
+    }
+
+    fn flush(&mut self) -> io::Result<()> {
+        loop {
+            let res = self.io.flush();
+
+            match res {
+                Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
+                    self.block_on(mio::Ready::writable())
+                }
+                res => {
+                    return res;
+                }
+            }
+        }
+    }
+}
+
 
 
 // }}}
@@ -397,8 +521,8 @@ pub fn spawn<F, T>(f: F)
 }
 
 pub fn yield_now() {
-    let t = pop_transfer().context.resume(0);
-    save_transfer(t);
+    // TODO: send a resume notification
+    co_switch_out();
 }
 // }}}
 
@@ -409,8 +533,10 @@ mod tests {
 
     #[test]
     fn it_works() {
-        spawn(|| {
-                  printerrln!("It works");
+        spawn(|| for i in 0..10 {
+                  spawn(move || {
+                            printerrln!("{}", i);
+                        });
               });
 
         thread::spawn(|| thread::sleep_ms(3000)).join().unwrap();
