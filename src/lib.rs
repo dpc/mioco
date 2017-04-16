@@ -46,6 +46,9 @@ fn miofib_logger() -> Logger {
     let drain = std::sync::Mutex::new(drain).fuse();
     slog::Logger::root(drain, o!("miofib" => env!("CARGO_PKG_VERSION") ))
 }
+
+
+
 // }}}
 
 // {{{ Miofib
@@ -80,7 +83,7 @@ impl Miofib {
         let (txs, mut joins_and_polls): (_, Vec<(_, _)>) = (0..8)
             .map(|i| {
                      let (tx, rx) = channel();
-                     let (mut loop_, mio_loop) = Loop::new(i, rx, &log);
+                     let (mut loop_, mio_loop) = Loop::new(LoopId(i), rx, &log);
                      let join = thread::spawn(move || loop_.run());
                      (tx, (join, mio_loop))
                  })
@@ -97,8 +100,8 @@ impl Miofib {
         }
     }
 
-    fn poll(&self, i: usize) -> &mio::Poll {
-        &self.polls[i]
+    fn poll(&self, id: LoopId) -> &mio::Poll {
+        &self.polls[id.0]
     }
 
     fn spawn<F, T>(&self, f: F)
@@ -116,8 +119,23 @@ impl Miofib {
 // }}}
 
 // {{{ Fiber
+const TL_FIBER_ID_NONE : FiberId = FiberId(-1isize as usize);
+
+#[derive(Copy, Clone, Eq, PartialEq)]
+struct FiberId(usize);
+
+impl slog::Value for FiberId {
+    fn serialize(&self,
+                 record: &slog::Record,
+                 key: slog::Key,
+                 serializer: &mut slog::Serializer)
+                 -> slog::Result {
+                     self.0.serialize(record, key, serializer)
+                 }
+}
+
 thread_local! {
-    pub static TL_CUR_TRANSFER: RefCell<Option<context::Transfer>> = RefCell::new(None);
+    static TL_CUR_TRANSFER: RefCell<Option<context::Transfer>> = RefCell::new(None);
 }
 
 fn save_transfer(t: context::Transfer) {
@@ -141,6 +159,12 @@ fn co_switch_out() {
     let t = pop_transfer().context.resume(0);
     save_transfer(t);
 }
+
+thread_local! {
+    static TL_FIBER_ID: Cell<FiberId> =
+        Cell::new(TL_FIBER_ID_NONE);
+}
+
 
 struct Fiber {
     cur_context: Option<context::Context>,
@@ -192,13 +216,13 @@ impl Fiber {
         }
     }
 
-    fn resume(&mut self, loop_id: usize, fiber_id: usize) {
+    fn resume(&mut self, loop_id: LoopId, fiber_id: FiberId) {
         TL_LOOP_ID.with(|id| id.set(loop_id));
         TL_FIBER_ID.with(|id| id.set(fiber_id));
         let t = self.cur_context.take().unwrap().resume(0);
         self.cur_context = Some(t.context);
-        TL_LOOP_ID.with(|id| id.set(std::usize::MAX));
-        TL_FIBER_ID.with(|id| id.set(std::usize::MAX));
+        TL_LOOP_ID.with(|id| id.set(TL_LOOP_ID_NONE));
+        TL_FIBER_ID.with(|id| id.set(TL_FIBER_ID_NONE));
 
         if t.data == 1 {
             self.finished = true;
@@ -262,9 +286,32 @@ fn channel() -> (LoopTx, LoopRx) {
 // }}}
 
 // {{{ Loop
+const TL_LOOP_ID_NONE : LoopId = LoopId(-1isize as usize);
+
+#[derive(Copy, Clone, Eq, PartialEq)]
+struct LoopId(usize);
+
+impl slog::Value for LoopId {
+    fn serialize(&self,
+                 record: &slog::Record,
+                 key: slog::Key,
+                 serializer: &mut slog::Serializer)
+                 -> slog::Result {
+                     self.0.serialize(record, key, serializer)
+                 }
+}
+
+thread_local! {
+    static TL_LOOP_ID: Cell<LoopId> =
+        Cell::new(TL_LOOP_ID_NONE);
+    static TL_LOOP_LOG: UnsafeCell<Logger> =
+        UnsafeCell::new(Logger::root(slog::Discard, o!()));
+}
+
+
 /// Event loop on a given thread
 struct Loop {
-    id: usize,
+    id: LoopId,
     rx: LoopRx,
     fibers: Slab<Fiber>,
     log: Logger,
@@ -273,7 +320,7 @@ struct Loop {
 const QUEUE_TOKEN: usize = std::usize::MAX - 1;
 
 impl Loop {
-    fn new(id: usize, rx: LoopRx, log: &Logger) -> (Self, mio::Poll) {
+    fn new(id: LoopId, rx: LoopRx, log: &Logger) -> (Self, mio::Poll) {
 
         let log = log.new(o!("loop-id" => id));
 
@@ -311,7 +358,7 @@ impl Loop {
                     self.poll_queue();
                 } else {
                     if self.fibers.contains(token) {
-                        self.resume_fib(token)
+                        self.resume_fib(FiberId(token))
                     }
                 }
             }
@@ -326,7 +373,7 @@ impl Loop {
                         match self.fibers.insert(fiber) {
                             Ok(fib_i) => {
                                 trace!(self.log, "fiber spawned"; "fiber-id" => fib_i);
-                                self.resume_fib(fib_i);
+                                self.resume_fib(FiberId(fib_i));
                             }
                             Err(_fiber) => panic!("Ran out of slab"),
                         }
@@ -342,29 +389,19 @@ impl Loop {
         }
     }
 
-    fn resume_fib(&mut self, fib_i: usize) {
+    fn resume_fib(&mut self, fib_i: FiberId) {
         trace!(self.log, "fiber resuming"; "fiber-id" => fib_i);
-        self.fibers[fib_i].resume(self.id, fib_i);
+        self.fibers[fib_i.0].resume(self.id, fib_i);
         trace!(self.log, "fiber suspended"; "fiber-id" => fib_i);
-        if self.fibers[fib_i].is_finished() {
+        if self.fibers[fib_i.0].is_finished() {
             trace!(self.log, "fiber finished"; "fiber-id" => fib_i);
-            self.fibers.remove(fib_i);
+            self.fibers.remove(fib_i.0);
         }
     }
 }
 // }}}
 
 // {{{ Evented
-thread_local! {
-    pub static TL_FIBER_ID: Cell<usize> =
-        Cell::new(-1isize as usize);
-    pub static TL_LOOP_ID: Cell<usize> =
-        Cell::new(-1isize as usize);
-    pub static TL_LOOP_LOG: UnsafeCell<Logger> =
-        UnsafeCell::new(Logger::root(slog::Discard, o!()));
-}
-
-
 
 pub trait Evented {
     fn notify_on(&self, interest: mio::Ready);
@@ -378,7 +415,7 @@ pub struct AsyncIO<T>
     where T: mio::Evented
 {
     io: T,
-    registered_on: RefCell<Option<(usize, usize, mio::Ready)>>,
+    registered_on: RefCell<Option<(LoopId, FiberId, mio::Ready)>>,
 }
 
 impl<T> AsyncIO<T>
@@ -411,7 +448,7 @@ impl<T> Evented for AsyncIO<T>
                         MIOFIB
                             .poll(cur_loop)
                             .reregister(&self.io,
-                                        mio::Token(my_fiber),
+                                        mio::Token(my_fiber.0),
                                         interest,
                                         mio::PollOpt::edge())
                             .unwrap();
@@ -428,7 +465,7 @@ impl<T> Evented for AsyncIO<T>
                     MIOFIB
                         .poll(cur_loop)
                         .register(&self.io,
-                                  mio::Token(cur_fiber),
+                                  mio::Token(cur_fiber.0),
                                   interest,
                                   mio::PollOpt::edge())
                         .unwrap();
@@ -440,7 +477,7 @@ impl<T> Evented for AsyncIO<T>
                 MIOFIB
                     .poll(cur_loop)
                     .register(&self.io,
-                              mio::Token(cur_fiber),
+                              mio::Token(cur_fiber.0),
                               interest,
                               mio::PollOpt::edge())
                     .unwrap();
@@ -523,6 +560,13 @@ pub fn spawn<F, T>(f: F)
 pub fn yield_now() {
     // TODO: send a resume notification
     co_switch_out();
+}
+
+/// Check if running inside a mioco coroutine.
+///
+/// Returns true when executing inside a mioco coroutine, false otherwise.
+pub fn in_coroutine() -> bool {
+    TL_LOOP_ID.with(|id| id.get() == TL_LOOP_ID_NONE)
 }
 // }}}
 

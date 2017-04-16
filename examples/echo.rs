@@ -37,7 +37,7 @@ fn main() {
             let (mut conn, _addr) = try!(listener.accept());
 
             let _join = miofib::spawn(move || -> io::Result<()> {
-                let mut buf = vec![0u8; 1024 * 64];
+                let mut buf = vec![0u8; 1024 * 8];
                 loop {
                     let size = try!(conn.read(&mut buf));
                     if size == 0 {/* eof */ break; }
