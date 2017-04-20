@@ -2,7 +2,7 @@ use std::io;
 use std::net::SocketAddr;
 use mio;
 use std;
-use super::super::{Evented, AsyncIO};
+use super::super::{Evented, AsyncIO, in_coroutine};
 
 pub use mio::tcp::Shutdown;
 
@@ -38,8 +38,14 @@ impl TcpListener {
     }
 
     pub fn accept(&self) -> io::Result<(TcpStream, std::net::SocketAddr)> {
+        let in_coroutine = in_coroutine();
+
         loop {
             let res = self.io.accept();
+
+            if !in_coroutine {
+                return res.map(|(s, a)| (AsyncIO::new(s), a))
+            }
 
             match res {
                 Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
@@ -63,7 +69,9 @@ impl TcpStream {
         let stream =
             mio::tcp::TcpStream::connect(addr).map(|t| {
                                                        let stream = AsyncIO::new(t);
-                                                       stream.block_on(mio::Ready::writable());
+                                                       if in_coroutine() {
+                                                           stream.block_on(mio::Ready::writable());
+                                                       }
                                                        stream
                                                    });
 
@@ -74,7 +82,6 @@ impl TcpStream {
         }
 
         stream
-
     }
 
     /// Creates a new TcpStream from the pending socket inside the given
@@ -82,7 +89,9 @@ impl TcpStream {
     pub fn connect_stream(stream: std::net::TcpStream, addr: &SocketAddr) -> io::Result<Self> {
         let stream = mio::tcp::TcpStream::connect_stream(stream, addr).map(|t| {
             let stream = AsyncIO::new(t);
-            stream.block_on(mio::Ready::writable());
+            if in_coroutine() {
+                stream.block_on(mio::Ready::writable());
+            }
 
             stream
         });

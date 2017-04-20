@@ -23,6 +23,7 @@ mod thunk;
 use thunk::Thunk;
 
 pub mod net;
+pub mod sync;
 
 // {{{ Misc
 macro_rules! printerrln {
@@ -239,6 +240,7 @@ impl Fiber {
 // {{{ LoopChannel
 enum LoopMsg {
     Spawn(Fiber),
+    Wake(FiberId),
 }
 
 struct LoopTx {
@@ -377,8 +379,12 @@ impl Loop {
                             }
                             Err(_fiber) => panic!("Ran out of slab"),
                         }
+                    },
+                    LoopMsg::Wake(fiber_id) => {
+                        if self.fibers.contains(fiber_id.0) {
+                            self.resume_fib(fiber_id);
+                        }
                     }
-
                 },
                 Err(std::sync::mpsc::TryRecvError::Empty) => break,
                 Err(e) => {
@@ -493,8 +499,14 @@ impl<MT> io::Read for AsyncIO<MT>
 {
     /// Block on read.
     fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
+        let in_coroutine = in_coroutine();
+
         loop {
             let res = self.io.read(buf);
+
+            if !in_coroutine {
+                return res;
+            }
 
             match res {
                 Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
@@ -513,8 +525,15 @@ impl<MT> io::Write for AsyncIO<MT>
 {
     /// Block on write.
     fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+        let in_coroutine = in_coroutine();
+
+
         loop {
             let res = self.io.write(buf);
+
+            if !in_coroutine {
+                return res;
+            }
 
             match res {
                 Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
@@ -528,8 +547,14 @@ impl<MT> io::Write for AsyncIO<MT>
     }
 
     fn flush(&mut self) -> io::Result<()> {
+        let in_coroutine = in_coroutine();
+
         loop {
             let res = self.io.flush();
+
+            if !in_coroutine {
+                return res;
+            }
 
             match res {
                 Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
@@ -558,15 +583,19 @@ pub fn spawn<F, T>(f: F)
 }
 
 pub fn yield_now() {
-    // TODO: send a resume notification
-    co_switch_out();
+    if in_coroutine() {
+        // TODO: send a resume notification
+        co_switch_out();
+    } else {
+        std::thread::yield_now();
+    }
 }
 
 /// Check if running inside a mioco coroutine.
 ///
 /// Returns true when executing inside a mioco coroutine, false otherwise.
 pub fn in_coroutine() -> bool {
-    TL_LOOP_ID.with(|id| id.get() == TL_LOOP_ID_NONE)
+    TL_LOOP_ID.with(|id| id.get() != TL_LOOP_ID_NONE)
 }
 // }}}
 
