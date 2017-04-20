@@ -7,10 +7,11 @@ extern crate slog;
 extern crate slog_term;
 extern crate slog_async;
 extern crate slab;
+extern crate num_cpus;
 
 use slog::{Logger, Drain};
 
-use std::{mem, thread, io};
+use std::{mem, thread, io, panic};
 use std::cell::{Cell, UnsafeCell, RefCell};
 
 use std::sync::{mpsc, Mutex};
@@ -39,35 +40,37 @@ macro_rules! printerrln {
         }
     })
 }
-fn miofib_logger() -> Logger {
+
+fn mioco_logger() -> Logger {
     let decorator = slog_term::TermDecorator::new().build();
     let drain = slog_term::FullFormat::new(decorator).build().fuse();
-    //    let drain = slog_async::Async::new(drain).build().fuse();
+        let drain = slog_async::Async::new(drain).build().fuse();
 
     let drain = std::sync::Mutex::new(drain).fuse();
-    slog::Logger::root(drain, o!("miofib" => env!("CARGO_PKG_VERSION") ))
+    slog::Logger::root(drain, o!("mioco" => env!("CARGO_PKG_VERSION") ))
 }
 
 
 
 // }}}
 
-// {{{ Miofib
+// {{{ Mioco
 lazy_static! {
-    static ref MIOFIB: Miofib = {
-        Miofib::new()
+    static ref MIOCO: Mioco = {
+        Mioco::new()
     };
 }
 
-struct Miofib {
+struct Mioco {
     spawn_tx_i: AtomicUsize,
     loop_tx: Vec<LoopTx>,
     loop_join: Vec<thread::JoinHandle<()>>,
     log: Logger,
     polls: Vec<mio::Poll>,
+    num_threads: usize,
 }
 
-impl Drop for Miofib {
+impl Drop for Mioco {
     fn drop(&mut self) {
         self.loop_join
             .drain(..)
@@ -77,11 +80,12 @@ impl Drop for Miofib {
 }
 
 
-impl Miofib {
+impl Mioco {
     fn new() -> Self {
-        let log = miofib_logger();
-        debug!(log, "Creating miofib instance");
-        let (txs, mut joins_and_polls): (_, Vec<(_, _)>) = (0..8)
+        let log = mioco_logger();
+        let num_threads = num_cpus::get();
+        debug!(log, "Creating mioco instance");
+        let (txs, mut joins_and_polls): (_, Vec<(_, _)>) = (0..num_threads)
             .map(|i| {
                      let (tx, rx) = channel();
                      let (mut loop_, mio_loop) = Loop::new(LoopId(i), rx, &log);
@@ -92,12 +96,13 @@ impl Miofib {
 
         let (joins, polls) = joins_and_polls.drain(..).unzip();
 
-        Miofib {
+        Mioco {
             spawn_tx_i: AtomicUsize::new(0),
             loop_tx: txs,
             loop_join: joins,
             polls: polls,
             log: log,
+            num_threads: num_threads,
         }
     }
 
@@ -105,16 +110,21 @@ impl Miofib {
         &self.polls[id.0]
     }
 
-    fn spawn<F, T>(&self, f: F)
-        where F: Send + 'static + FnOnce() -> T,
+    fn spawn<F, T>(&self, f: F) -> JoinHandle<T>
+        where F: panic::UnwindSafe + Send + 'static + FnOnce() -> T,
               T: Send + 'static
     {
-        let fiber = Fiber::new(f, &self.log);
+        let (tx, rx) = mpsc::channel();
+        let fiber = Fiber::new(f, tx, &self.log);
 
         let i = self.spawn_tx_i.fetch_add(1, Ordering::Relaxed);
         let i = i % self.loop_tx.len();
 
         self.loop_tx[i].send(LoopMsg::Spawn(fiber));
+
+        JoinHandle {
+            rx: rx,
+        }
     }
 }
 // }}}
@@ -193,15 +203,29 @@ extern "C" fn context_function(t: context::Transfer) -> ! {
 }
 
 impl Fiber {
-    fn new<F, T>(f: F, log: &Logger) -> Self
-        where F: Send + 'static + FnOnce() -> T,
+    fn new<F, T>(f: F, exit_sender : mpsc::Sender<std::thread::Result<T>>, log: &Logger) -> Self
+        where F: panic::UnwindSafe + Send + 'static + FnOnce() -> T,
               T: Send + 'static
     {
         trace!(log, "spawning fiber");
 
         // Workaround for Box<FnOnce> not working
         let f : RefCell<Option<Thunk<'static>>> =
-            RefCell::new(Some(Thunk::new(move || { f(); })));
+            RefCell::new(Some(Thunk::new(move || {
+
+            let res = panic::catch_unwind(move || {
+                f()
+            });
+
+            match res {
+                Ok(res) => {
+                    let _ = exit_sender.send(Ok(res));
+                }
+                Err(cause) => {
+                    let _ = exit_sender.send(Err(cause));
+                }
+            }
+            })));
 
         let stack = stack::ProtectedFixedSizeStack::default();
 
@@ -350,7 +374,7 @@ impl Loop {
         TL_LOOP_LOG.with(|log| unsafe { *log.get() = self.log.clone() });
         loop {
             trace!(self.log, "poll");
-            let event_num = MIOFIB.poll(self.id).poll(&mut events, None).unwrap();
+            let event_num = MIOCO.poll(self.id).poll(&mut events, None).unwrap();
             trace!(self.log, "events"; "no" => event_num);
 
             for event in &events {
@@ -408,8 +432,8 @@ impl Loop {
 // }}}
 
 // {{{ Evented
-
-pub trait Evented {
+// TODO: Is this trait even needed? What's the point? Select maybe?
+trait Evented {
     fn notify_on(&self, interest: mio::Ready);
     fn block_on(&self, interest: mio::Ready) {
         self.notify_on(interest);
@@ -451,7 +475,7 @@ impl<T> Evented for AsyncIO<T>
                 if cur_loop == my_loop {
                     if (cur_fiber, interest) != (my_fiber, my_readiness) {
                         trace!(log, "reregister"; "fiber-id" => cur_fiber, "interest" => ?interest);
-                        MIOFIB
+                        MIOCO
                             .poll(cur_loop)
                             .reregister(&self.io,
                                         mio::Token(my_fiber.0),
@@ -466,9 +490,9 @@ impl<T> Evented for AsyncIO<T>
                            "old-fiber-id" => my_fiber,
                            "old-loop" => my_loop
                            );
-                    MIOFIB.poll(my_loop).deregister(&self.io).unwrap();
+                    MIOCO.poll(my_loop).deregister(&self.io).unwrap();
                     trace!(log, "register"; "fiber-id" => cur_fiber, "interest" => ?interest);
-                    MIOFIB
+                    MIOCO
                         .poll(cur_loop)
                         .register(&self.io,
                                   mio::Token(cur_fiber.0),
@@ -480,7 +504,7 @@ impl<T> Evented for AsyncIO<T>
             }
             None => {
                 trace!(log, "register"; "fiber-id" => cur_fiber, "interest" => ?interest);
-                MIOFIB
+                MIOCO
                     .poll(cur_loop)
                     .register(&self.io,
                               mio::Token(cur_fiber.0),
@@ -573,18 +597,40 @@ impl<MT> io::Write for AsyncIO<MT>
 // }}}
 
 // {{{ API
-//TODO: pub fn spawn<F, T>(f: F) -> Receiver<T>
-pub fn spawn<F, T>(f: F)
-    where F: FnOnce() -> T,
+/// Spawn a mioco coroutine that executes the given function.
+///
+/// If called inside an existing mioco instance - spawn and run a new coroutine
+/// in it.
+///
+/// If called outside of existing mioco instance - spawn a new mioco instance
+/// in a separate thread or use existing mioco instance to run new mioco
+/// coroutine. The API intention is to guarantee:
+///
+/// * This function does not block
+/// * The coroutine will execute in a mioco instance
+///
+/// the details on reusing existing mioco instances might change.
+///
+/// Any panics in the given function are caught
+/// and result in an `Err` that is available in the `JoinHandle`.
+pub fn spawn<F, T>(f: F) -> JoinHandle<T>
+    where F: panic::UnwindSafe + FnOnce() -> T,
           F: Send + 'static,
           T: Send + 'static
 {
-    MIOFIB.spawn(f)
+    MIOCO.spawn(f)
 }
 
+/// Yield execution of the current coroutine.
+///
+/// Coroutine can yield execution without blocking on anything
+/// particular to allow scheduler to run other coroutines before
+/// resuming execution of the current one.
 pub fn yield_now() {
     if in_coroutine() {
-        // TODO: send a resume notification
+        let cur_fiber = TL_FIBER_ID.with(|id| id.get());
+        let cur_loop = TL_LOOP_ID.with(|id| id.get());
+        MIOCO.loop_tx[cur_loop.0].send(LoopMsg::Wake(cur_fiber));
         co_switch_out();
     } else {
         std::thread::yield_now();
@@ -596,6 +642,30 @@ pub fn yield_now() {
 /// Returns true when executing inside a mioco coroutine, false otherwise.
 pub fn in_coroutine() -> bool {
     TL_LOOP_ID.with(|id| id.get() != TL_LOOP_ID_NONE)
+}
+
+/// Join handle for fiber result
+///
+/// Modeled after `std::thread::JoinHandle`.
+pub struct JoinHandle<T> {
+    rx : mpsc::Receiver<std::thread::Result<T>>,
+}
+
+impl<T> JoinHandle<T> {
+    pub fn join(&self) -> thread::Result<T> {
+        self.rx.recv().expect("Fiber should sent a result")
+    }
+}
+
+/// Get number of threads of current mioco instance.
+///
+/// Get number of threads of the Mioco instance that the current coroutine
+/// is running in.
+///
+/// This is useful eg. for load balancing: spawning as many coroutines as
+/// there is handling threads that can run them.
+pub fn thread_num() -> usize {
+    MIOCO.num_threads
 }
 // }}}
 

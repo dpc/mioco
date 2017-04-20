@@ -1,6 +1,6 @@
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, AtomicBool, Ordering};
-use {MIOFIB, LoopMsg, FiberId, co_switch_out};
+use {MIOCO, LoopMsg, FiberId, co_switch_out};
 use std;
 
 struct Shared {
@@ -24,7 +24,7 @@ impl Sender {
             let fiber_id = self.shared.fiber_id.load(Ordering::Relaxed);
             let loop_id = self.shared.loop_id.load(Ordering::Relaxed);
             if loop_id != std::usize::MAX && fiber_id != std::usize::MAX {
-                MIOFIB.loop_tx[loop_id].send(LoopMsg::Wake(FiberId(fiber_id)));
+                MIOCO.loop_tx[loop_id].send(LoopMsg::Wake(FiberId(fiber_id)));
             }
         }
     }

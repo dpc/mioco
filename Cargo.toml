@@ -1,13 +1,28 @@
 [package]
-name = "miofib"
-version = "0.1.0"
+name = "mioco"
+version = "0.9.0-pre"
 authors = ["Dawid Ciężarkiewicz <dpc@dpc.pw>"]
+description = "Scalable, coroutine-based fibers/green-threads for Rust (aka MIO COroutines)."
+keywords = ["mio", "asynchronous", "coroutine", "async", "fiber"]
+license = "MPL-2.0"
+documentation = "https://dpc.github.io/mioco/"
+homepage = "https://github.com/dpc/mioco"
+repository = "https://github.com/dpc/mioco"
+readme = "README.md"
 
 [dependencies]
 mio = "0.6.6"
 lazy_static = "*"
+num_cpus = "1.0.0"
 context = "1"
-slog = { version = "2", features = ["max_level_trace", "release_max_level_debug"] }
+#slog = { version = "2", features = ["max_level_trace", "release_max_level_debug"] }
+slog = "2"
 slog-term = "~2.0.0-4"
 slog-async = "2"
 slab = "*"
+
+[dev-dependencies]
+env_logger = "0.3.2"
+httparse = "1.1.1"
+net2 = "0.2.26"
+rand = "0.3.14"
