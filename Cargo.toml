@@ -15,7 +15,7 @@ mio = "0.6.6"
 lazy_static = "*"
 num_cpus = "1.0.0"
 context = "1"
-#slog = { version = "2", features = ["max_level_trace", "release_max_level_debug"] }
+#slog = { version = "2", features = ["max_level_trace", "release_max_level_trace"] }
 slog = "2"
 slog-term = "~2.0.0-4"
 slog-async = "2"

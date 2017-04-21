@@ -21,6 +21,8 @@ impl<T> Receiver<T>
     pub fn recv(&self) -> Result<T, mpsc::RecvError> {
         if in_coroutine() {
             loop {
+                self.notify_rx.reset();
+
                 let recv = self.try_recv();
 
                 match recv {

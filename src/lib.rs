@@ -44,7 +44,7 @@ macro_rules! printerrln {
 fn mioco_logger() -> Logger {
     let decorator = slog_term::TermDecorator::new().build();
     let drain = slog_term::FullFormat::new(decorator).build().fuse();
-        let drain = slog_async::Async::new(drain).build().fuse();
+//        let drain = slog_async::Async::new(drain).build().fuse();
 
     let drain = std::sync::Mutex::new(drain).fuse();
     slog::Logger::root(drain, o!("mioco" => env!("CARGO_PKG_VERSION") ))
@@ -111,7 +111,7 @@ impl Mioco {
     }
 
     fn spawn<F, T>(&self, f: F) -> JoinHandle<T>
-        where F: panic::UnwindSafe + Send + 'static + FnOnce() -> T,
+        where F: Send + 'static + FnOnce() -> T,
               T: Send + 'static
     {
         let (tx, rx) = mpsc::channel();
@@ -126,13 +126,36 @@ impl Mioco {
             rx: rx,
         }
     }
+
+    fn wake(&self, id : FullId) {
+        if id.loop_.0 != std::usize::MAX {
+            MIOCO.loop_tx[id.loop_.0].send(LoopMsg::Wake(id.fiber));
+        }
+    }
 }
+
+#[derive(Copy, Clone, PartialEq, Eq, Hash)]
+struct FullId {
+    loop_: LoopId,
+    fiber: FiberId,
+}
+
+fn get_cur_fullid() -> FullId {
+
+    let cur_loop= TL_LOOP_ID.with(|id| id.get());
+    let cur_fiber = TL_FIBER_ID.with(|id| id.get());
+    FullId {
+        loop_: cur_loop,
+        fiber: cur_fiber,
+    }
+}
+
 // }}}
 
 // {{{ Fiber
 const TL_FIBER_ID_NONE : FiberId = FiberId(-1isize as usize);
 
-#[derive(Copy, Clone, Eq, PartialEq)]
+#[derive(Copy, Clone, Eq, PartialEq, Hash)]
 struct FiberId(usize);
 
 impl slog::Value for FiberId {
@@ -204,7 +227,7 @@ extern "C" fn context_function(t: context::Transfer) -> ! {
 
 impl Fiber {
     fn new<F, T>(f: F, exit_sender : mpsc::Sender<std::thread::Result<T>>, log: &Logger) -> Self
-        where F: panic::UnwindSafe + Send + 'static + FnOnce() -> T,
+        where F:  Send + 'static + FnOnce() -> T,
               T: Send + 'static
     {
         trace!(log, "spawning fiber");
@@ -213,9 +236,9 @@ impl Fiber {
         let f : RefCell<Option<Thunk<'static>>> =
             RefCell::new(Some(Thunk::new(move || {
 
-            let res = panic::catch_unwind(move || {
+            let res = panic::catch_unwind(panic::AssertUnwindSafe(move || {
                 f()
-            });
+            }));
 
             match res {
                 Ok(res) => {
@@ -314,7 +337,7 @@ fn channel() -> (LoopTx, LoopRx) {
 // {{{ Loop
 const TL_LOOP_ID_NONE : LoopId = LoopId(-1isize as usize);
 
-#[derive(Copy, Clone, Eq, PartialEq)]
+#[derive(Copy, Clone, Eq, PartialEq, Hash)]
 struct LoopId(usize);
 
 impl slog::Value for LoopId {
@@ -614,7 +637,7 @@ impl<MT> io::Write for AsyncIO<MT>
 /// Any panics in the given function are caught
 /// and result in an `Err` that is available in the `JoinHandle`.
 pub fn spawn<F, T>(f: F) -> JoinHandle<T>
-    where F: panic::UnwindSafe + FnOnce() -> T,
+    where F: FnOnce() -> T,
           F: Send + 'static,
           T: Send + 'static
 {

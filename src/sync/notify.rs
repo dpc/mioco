@@ -1,6 +1,6 @@
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, AtomicBool, Ordering};
-use {MIOCO, LoopMsg, FiberId, co_switch_out};
+use {MIOCO, LoopMsg, FiberId, co_switch_out, TL_LOOP_ID, TL_FIBER_ID};
 use std;
 
 struct Shared {
@@ -23,7 +23,7 @@ impl Sender {
         if !self.shared.is_set.swap(true, Ordering::SeqCst) {
             let fiber_id = self.shared.fiber_id.load(Ordering::Relaxed);
             let loop_id = self.shared.loop_id.load(Ordering::Relaxed);
-            if loop_id != std::usize::MAX && fiber_id != std::usize::MAX {
+            if loop_id != std::usize::MAX {
                 MIOCO.loop_tx[loop_id].send(LoopMsg::Wake(FiberId(fiber_id)));
             }
         }
@@ -36,8 +36,17 @@ pub struct Receiver {
 }
 
 impl Receiver {
+
+    pub fn reset(&self) {
+        self.shared.is_set.store(false, Ordering::SeqCst)
+    }
+
     pub fn wait(&self) {
         loop {
+            let cur_fiber = TL_FIBER_ID.with(|id| id.get());
+            let cur_loop = TL_LOOP_ID.with(|id| id.get());
+            self.shared.fiber_id.store(cur_fiber.0, Ordering::Relaxed);
+            self.shared.loop_id.store(cur_loop.0, Ordering::Relaxed);
             // TODO: Optimize/fix ordering?
             if self.shared.is_set.swap(false, Ordering::SeqCst) {
                 return;
