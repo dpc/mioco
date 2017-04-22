@@ -106,7 +106,7 @@ impl<T> Sender<T> {
 /// like `std::sync::mpsc::channel()`.
 pub fn channel<T>() -> (Sender<T>, Receiver<T>) {
 
-    let (n_tx, n_rx) = notify::notify_channel();
+    let (n_tx, n_rx) = notify::channel();
     let (tx, rx) = mpsc::channel();
     (Sender {
         tx: Some(tx),

@@ -64,7 +64,7 @@ impl Receiver {
     }
 }
 
-pub fn notify_channel() -> (Sender, Receiver) {
+pub fn channel() -> (Sender, Receiver) {
     let shared = Arc::new(Shared {
                               fiber_id: AtomicUsize::new(std::usize::MAX),
                               loop_id: AtomicUsize::new(std::usize::MAX),

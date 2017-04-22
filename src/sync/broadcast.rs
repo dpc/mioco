@@ -84,7 +84,7 @@ impl Receiver {
     }
 }
 
-pub fn notify_channel() -> (Sender, Receiver) {
+pub fn channel() -> (Sender, Receiver) {
     let shared = Arc::new(Shared {
                               wake_list: Mutex::new(HashSet::new()),
                               round: AtomicUsize::new(0),

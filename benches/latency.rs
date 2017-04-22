@@ -68,8 +68,8 @@ fn mpsc_pingpong(b: &mut Bencher) {
 
 #[bench]
 fn notify_pingpong(b: &mut Bencher) {
-    let (tx1, rx1) = mioco::sync::notify::notify_channel();
-    let (tx2, rx2) = mioco::sync::notify::notify_channel();
+    let (tx1, rx1) = mioco::sync::notify::channel();
+    let (tx2, rx2) = mioco::sync::notify::channel();
 
     let b = SendBencher(b as *mut Bencher);
 
@@ -104,8 +104,8 @@ fn notify_pingpong(b: &mut Bencher) {
 
 #[bench]
 fn broadcast_pingpong(b: &mut Bencher) {
-    let (tx1, rx1) = mioco::sync::broadcast::notify_channel();
-    let (tx2, rx2) = mioco::sync::broadcast::notify_channel();
+    let (tx1, rx1) = mioco::sync::broadcast::channel();
+    let (tx2, rx2) = mioco::sync::broadcast::channel();
 
     let b = SendBencher(b as *mut Bencher);
 
