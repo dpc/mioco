@@ -13,14 +13,9 @@ fn tx_rx_outside_mioco() {
 
     thread::sleep_ms(1000);
 
-    let mut sum = 0;
-    for _ in 0..50 {
-        if let Ok(i) = rx.try_recv() {
-            sum += i;
-        }
+    for i in 0..10 {
+        assert_eq!(i, rx.try_recv().unwrap());
     }
-
-    assert_eq!(sum, 45);
 }
 
 #[test]
@@ -31,13 +26,9 @@ fn tx_outside_rx_inside_mioco() {
     }
 
     mioco::spawn(move || {
-        let mut sum = 0;
-        for _ in 0..50 {
-            if let Ok(i) = rx.try_recv() {
-                sum += i;
-            }
+        for i in 0..10 {
+            assert_eq!(i, rx.try_recv().unwrap());
         }
-        assert_eq!(sum, 45);
     });
 
     thread::sleep_ms(1000);
@@ -54,13 +45,9 @@ fn tx_inside_rx_inside_mioco() {
     });
 
     mioco::spawn(move || {
-        let mut sum = 0;
-        for _ in 0..50 {
-            if let Ok(i) = rx.try_recv() {
-                sum += i;
-            }
+        for i in 0..10 {
+            assert_eq!(i, rx.try_recv().unwrap());
         }
-        assert_eq!(sum, 45);
     });
 
     thread::sleep_ms(1000);
