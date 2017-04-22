@@ -695,24 +695,6 @@ pub fn thread_num() -> usize {
 // {{{ Tests
 #[cfg(test)]
 mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        spawn(|| for i in 0..10 {
-                  spawn(move || {
-                            printerrln!("{}", i);
-                        });
-              });
-
-        thread::spawn(|| thread::sleep_ms(3000)).join().unwrap();
-        spawn(|| {
-                  printerrln!("It works2");
-              });
-
-
-        thread::spawn(|| thread::sleep_ms(3000)).join().unwrap();
-    }
 }
 // }}}
 

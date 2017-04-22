@@ -51,6 +51,7 @@ impl Receiver {
         *self.prev_round.borrow_mut() = self.shared.round.load(Ordering::SeqCst)
     }
 
+    /// Blocks until someone calls notify since the last `reset`.
     pub fn wait(&self) {
 
         let id = get_cur_fullid();

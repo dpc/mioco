@@ -48,7 +48,7 @@ impl Receiver {
             self.shared.fiber_id.store(cur_fiber.0, Ordering::Relaxed);
             self.shared.loop_id.store(cur_loop.0, Ordering::Relaxed);
             // TODO: Optimize/fix ordering?
-            if self.shared.is_set.swap(false, Ordering::SeqCst) {
+            if self.shared.is_set.load(Ordering::SeqCst) {
                 return;
             }
             co_switch_out();

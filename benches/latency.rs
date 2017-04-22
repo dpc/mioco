@@ -78,6 +78,7 @@ fn notify_pingpong(b: &mut Bencher) {
                                  let finished = finished.clone();
                                  move || {
                                      while !finished.load(Ordering::SeqCst) {
+                                         rx1.reset();
                                          tx2.notify();
                                          rx1.wait();
                                      }
@@ -88,6 +89,7 @@ fn notify_pingpong(b: &mut Bencher) {
         let b = unsafe { &mut *b.0 };
         b.iter(|| {
                    rx2.wait();
+                   rx2.reset();
                    tx1.notify();
                });
         rx2.wait();
@@ -113,6 +115,7 @@ fn broadcast_pingpong(b: &mut Bencher) {
                                  let finished = finished.clone();
                                  move || {
                                      while !finished.load(Ordering::SeqCst) {
+                                         rx1.reset();
                                          tx2.notify();
                                          rx1.wait();
                                      }
@@ -123,6 +126,7 @@ fn broadcast_pingpong(b: &mut Bencher) {
         let b = unsafe { &mut *b.0 };
         b.iter(|| {
                    rx2.wait();
+                   rx2.reset();
                    tx1.notify();
                });
         rx2.wait();
