@@ -1,9 +1,9 @@
-extern crate miofib;
+extern crate mioco;
 
 use std::net::SocketAddr;
 use std::str::FromStr;
 use std::io::{self, Read, Write};
-use miofib::net::TcpListener;
+use mioco::net::TcpListener;
 
 const DEFAULT_LISTEN_ADDR : &'static str = "127.0.0.1:5555";
 
@@ -26,7 +26,7 @@ macro_rules! printerrln {
 }
 
 fn main() {
-    let _join = miofib::spawn(|| -> io::Result<()> {
+    let _join = mioco::spawn(|| -> io::Result<()> {
         let addr = listend_addr();
 
         let listener = TcpListener::bind(&addr)?;
@@ -36,7 +36,7 @@ fn main() {
         loop {
             let (mut conn, _addr) = listener.accept()?;
 
-            let _join = miofib::spawn(move || -> io::Result<()> {
+            let _join = mioco::spawn(move || -> io::Result<()> {
                 let mut buf = vec![0u8; 1024 * 8];
                 loop {
                     let size = conn.read(&mut buf)?;
