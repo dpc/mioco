@@ -68,6 +68,8 @@ impl<T> Mutex<T> {
                                                      )
             }
         } else {
+            // TODO: Optimistically defer locking and cloning
+            // to after first `try_lock` error?
             let broadcast_rx = self.broadcast_rx.lock().unwrap().clone();
             loop {
                 broadcast_rx.reset();
