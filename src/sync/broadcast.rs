@@ -41,6 +41,7 @@ impl Sender {
 }
 
 
+#[derive(Clone)]
 pub struct Receiver {
     shared: Arc<Shared>,
     prev_round: RefCell<usize>,
