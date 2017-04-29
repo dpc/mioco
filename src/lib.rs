@@ -8,7 +8,6 @@ extern crate slog_term;
 extern crate slog_async;
 extern crate slab;
 extern crate num_cpus;
-extern crate thread_scoped;
 
 use slog::{Logger, Drain};
 
