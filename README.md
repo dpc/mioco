@@ -23,7 +23,7 @@ Mioco provides green-threads (aka fibers) like eg. Goroutines in Go, for Rust.
 ## Status
 
 This repo is a complete re-implementation of mioco. The code of previous
-versions was moved to [mioco.pre-0.9].
+versions was moved to [mioco.pre-0.9][mioco-pre-0.9].
 
 [mioco-pre-0.9]: https://github.com/dpc/mioco.pre-0.9
 
