@@ -122,6 +122,8 @@ impl<T> SyncReceiver<T>
                     Err(mpsc::TryRecvError::Empty) => self.broadcast_rx.wait(),
                     Err(mpsc::TryRecvError::Disconnected) => return Err(mpsc::RecvError),
                     Ok(t) => {
+                        // wake up sender fiber in case it context switched
+                        // because of channel full error
                         self.broadcast_tx.notify();
                         return Ok(t)
                     },
@@ -132,9 +134,7 @@ impl<T> SyncReceiver<T>
 
                 match recv {
                     Err(e) => Err(e),
-                    Ok(t) => {
-                        return Ok(t)
-                    },
+                    Ok(t) => return Ok(t),
                 }
         }
     }
@@ -179,9 +179,8 @@ impl<T> SyncSender<T> {
                 };
             }
         } else {
-            // previous send is notified. so 'rx' will be
-            // notified and there will be space for this
-            // send at some point
+            // previous send's notify() will make sure 'rx' will be notified
+            // and there will be space for this send at some point
             self.tx.as_ref().unwrap().send(t)?;
         }
         self.broadcast_tx.notify();
