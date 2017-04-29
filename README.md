@@ -34,5 +34,6 @@ The goals of new implementation:
 * [x] simplify the approach
   * [x] remove the exposed scheduler
 * [x] model the API to be more like `std` library, less like `mio`
-* [.] provide working synchronization primitives
-* [.] add support for file IO
+* [ ] focus on synchronization primitives first
+* [ ] support async file IO (via worker threads)
+* [ ] port all the existing mioco features, tests, examples etc.
