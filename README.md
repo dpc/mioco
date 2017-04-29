@@ -29,9 +29,10 @@ versions was moved to [mioco.pre-0.9][mioco-pre-0.9].
 
 The goals of new implementation:
 
-* switch to latest `mio` version
-* copy all the applicable good ideas from `tokio` reactor code
-* simplify the approach
-  * remove the exposed scheduler
-* model the API to be more like `std` library, less like `mio`
-* add support for file IO
+* [x] switch to latest `mio` version
+* [x] copy all the applicable good ideas from `tokio` reactor code
+* [x] simplify the approach
+  * [x] remove the exposed scheduler
+* [x] model the API to be more like `std` library, less like `mio`
+* [.] provide working synchronization primitives
+* [.] add support for file IO
