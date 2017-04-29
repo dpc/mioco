@@ -1,0 +1,20 @@
+language: rust
+cache:
+  - cargo
+rust:
+  - stable
+  - 1.17.0
+  - beta
+  - nightly
+
+script:
+  - make all
+  - make travistest
+  - if [ "$TRAVIS_RUST_VERSION" == "nightly" ]; then make bench ; fi
+
+env:
+  global:
+    - RUST_BACKTRACE=1
+  matrix:
+    -
+    - RELEASE=true
