@@ -44,8 +44,8 @@ fn main() {
                             let mut buf_i = 0;
                             let mut buf = [0u8; 1024];
 
-                            let mut headers = [httparse::EMPTY_HEADER; 16];
                             loop {
+                                let mut headers = [httparse::EMPTY_HEADER; 16];
                                 let len = try!(conn.read(&mut buf[buf_i..]));
 
                                 if len == 0 {
