@@ -8,10 +8,12 @@ extern crate slog_term;
 extern crate slog_async;
 extern crate slab;
 extern crate num_cpus;
+extern crate thread_scoped;
 
 use slog::{Logger, Drain};
 
-use std::{mem, thread, io, panic};
+use std::{mem, thread, panic};
+use std::io as sio;
 use std::cell::{Cell, UnsafeCell, RefCell};
 
 use std::sync::{mpsc, Mutex};
@@ -25,6 +27,7 @@ use thunk::Thunk;
 
 pub mod net;
 pub mod sync;
+pub mod fs;
 
 // {{{ Misc
 macro_rules! printerrln {
@@ -454,6 +457,37 @@ impl Loop {
 }
 // }}}
 
+// {{{ Worker
+
+thread_local! {
+    static TL_WORKER_THREAD: WorkerThread = WorkerThread::new();
+}
+
+
+struct WorkerThread {
+    tx : mpsc::Sender<Thunk<'static>>,
+}
+
+impl WorkerThread {
+
+    fn new() -> Self {
+        let (tx, rx) = mpsc::channel();
+        thread::spawn(move || {
+            loop {
+                let f : Thunk<'static> = rx.recv().unwrap();
+                f.invoke(())
+            }
+        });
+
+        WorkerThread {
+            tx: tx,
+        }
+    }
+}
+
+// }}}
+
+
 // {{{ Evented
 // TODO: Is this trait even needed? What's the point? Select maybe?
 trait Evented {
@@ -541,11 +575,11 @@ impl<T> Evented for AsyncIO<T>
     }
 }
 
-impl<MT> io::Read for AsyncIO<MT>
-    where MT: mio::Evented + io::Read + 'static
+impl<MT> sio::Read for AsyncIO<MT>
+    where MT: mio::Evented + sio::Read + 'static
 {
     /// Block on read.
-    fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
+    fn read(&mut self, buf: &mut [u8]) -> sio::Result<usize> {
         let in_coroutine = in_coroutine();
 
         loop {
@@ -556,7 +590,7 @@ impl<MT> io::Read for AsyncIO<MT>
             }
 
             match res {
-                Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
+                Err(ref e) if e.kind() == sio::ErrorKind::WouldBlock => {
                     self.block_on(mio::Ready::readable())
                 }
                 res => {
@@ -567,11 +601,11 @@ impl<MT> io::Read for AsyncIO<MT>
     }
 }
 
-impl<MT> io::Write for AsyncIO<MT>
-    where MT: mio::Evented + 'static + io::Write
+impl<MT> sio::Write for AsyncIO<MT>
+    where MT: mio::Evented + 'static + sio::Write
 {
     /// Block on write.
-    fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+    fn write(&mut self, buf: &[u8]) -> sio::Result<usize> {
         let in_coroutine = in_coroutine();
 
 
@@ -583,7 +617,7 @@ impl<MT> io::Write for AsyncIO<MT>
             }
 
             match res {
-                Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
+                Err(ref e) if e.kind() == sio::ErrorKind::WouldBlock => {
                     self.block_on(mio::Ready::writable())
                 }
                 res => {
@@ -593,7 +627,7 @@ impl<MT> io::Write for AsyncIO<MT>
         }
     }
 
-    fn flush(&mut self) -> io::Result<()> {
+    fn flush(&mut self) -> sio::Result<()> {
         let in_coroutine = in_coroutine();
 
         loop {
@@ -604,7 +638,7 @@ impl<MT> io::Write for AsyncIO<MT>
             }
 
             match res {
-                Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
+                Err(ref e) if e.kind() == sio::ErrorKind::WouldBlock => {
                     self.block_on(mio::Ready::writable())
                 }
                 res => {
@@ -690,6 +724,38 @@ impl<T> JoinHandle<T> {
 pub fn thread_num() -> usize {
     MIOCO.num_threads
 }
+
+
+/// Execute a block of blocking operations outside of mioco.
+///
+/// Mioco requires cooperative context-switching points like
+/// mioco IO, `yield_now()` etc. Long running CPU-intense work,
+/// or native blocking-IO could starve other coroutines.
+///
+/// To prevent that this call can be used to execute a block of code
+/// without blocking cooperative coroutine scheduling. This is done by
+/// offloading the synchronous operations to a separate thread, and blocking
+/// current coroutine when operation is completed.
+pub fn offload<F, R>(f: F) -> R
+    where F: FnOnce() -> R,
+          F: Send,
+          R: Send + 'static
+{
+    let (tx, rx) = sync::mpsc::channel();
+    let closure = Thunk::new(move || {
+        let res = f();
+        tx.send(res).unwrap();
+    });
+
+    let closure = unsafe { std::mem::transmute::<Thunk<(), ()>, Thunk<'static, (), ()>>(closure) };
+
+    TL_WORKER_THREAD.with(|wt| {
+        wt.tx.send(closure).unwrap() ;
+    });
+
+    rx.recv().unwrap()
+}
+
 // }}}
 
 // {{{ Tests
