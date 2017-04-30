@@ -169,6 +169,7 @@ impl<T> SyncSender<T> {
     pub fn send(&self, mut t: T) -> Result<(), mpsc::SendError<T>> {
         if in_coroutine() {
             loop {
+                self.broadcast_rx.reset();
                 t = match self.try_send(t) {
                     Ok(t) => return Ok(t),
                     Err(mpsc::TrySendError::Full(t)) => {
