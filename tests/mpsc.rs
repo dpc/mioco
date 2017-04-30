@@ -15,8 +15,6 @@ fn tx_rx_outside_mioco() {
                       let _ = tx.send(i);
                   });
 
-    thread::sleep_ms(1000);
-
     for i in 0..10 {
         assert_eq!(i, rx.recv().unwrap());
     }
@@ -94,6 +92,9 @@ fn sync_tx_outside_rx_inside_mioco() {
         }
     });
 
+    // allow the queue to get full
+    thread::sleep_ms(1000);
+
     mioco::spawn(move || {
         for i in 0..10 {
             assert_eq!(i, rx.recv().unwrap());
@@ -115,6 +116,7 @@ fn sync_tx_inside_rx_inside_mioco() {
         }
     });
 
+    // allow the queue to get full
     thread::sleep_ms(1000);
 
     mioco::spawn(move || {
