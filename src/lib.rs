@@ -421,13 +421,9 @@ impl Loop {
             match self.rx.rx.try_recv() {
                 Ok(msg) => match msg {
                     LoopMsg::Spawn(fiber) => {
-                        match self.fibers.insert(fiber) {
-                            Ok(fib_i) => {
-                                trace!(self.log, "fiber spawned"; "fiber-id" => fib_i);
-                                self.resume_fib(FiberId(fib_i));
-                            }
-                            Err(_fiber) => panic!("Ran out of slab"),
-                        }
+                        let fib_i = self.fibers.insert(fiber);
+                        trace!(self.log, "fiber spawned"; "fiber-id" => fib_i);
+                        self.resume_fib(FiberId(fib_i));
                     },
                     LoopMsg::Wake(fiber_id) => {
                         if self.fibers.contains(fiber_id.0) {
