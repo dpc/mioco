@@ -2,8 +2,6 @@ extern crate mioco;
 
 use mioco::sync::mpsc;
 use std::thread;
-use std::sync::atomic::{AtomicUsize, Ordering};
-use std::sync::Arc;
 
 // NOTE: All the tests are using single MIOCO instance
 
@@ -69,7 +67,7 @@ fn sync_tx_rx_outside_mioco() {
                       let _ = tx.send(i);
                   });
 
-    thread::sleep_ms(1000);
+    thread::sleep(std::time::Duration::from_micros(1_000));
 
     mioco::spawn(move || {
         for i in 0..10 {
@@ -93,7 +91,7 @@ fn sync_tx_outside_rx_inside_mioco() {
     });
 
     // allow the queue to get full
-    thread::sleep_ms(1000);
+    thread::sleep(std::time::Duration::from_micros(1_000));
 
     mioco::spawn(move || {
         for i in 0..10 {
@@ -117,7 +115,7 @@ fn sync_tx_inside_rx_inside_mioco() {
     });
 
     // allow the queue to get full
-    thread::sleep_ms(1000);
+    thread::sleep(std::time::Duration::from_micros(1_000));
 
     mioco::spawn(move || {
         for i in 0..10 {

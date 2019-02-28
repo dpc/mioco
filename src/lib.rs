@@ -28,33 +28,12 @@ pub mod net;
 pub mod sync;
 pub mod fs;
 
-// {{{ Misc
-macro_rules! printerrln {
-    ($($arg:tt)*) => ({
-        use std::io::prelude::*;
-        if let Err(e) = writeln!(&mut ::std::io::stderr(), "{}",
-            format_args!($($arg)*)) {
-            panic!(concat!(
-                    "Failed to write to stderr.\n",
-                    "Original error output: {}\n",
-                    "Secondary error writing to stderr: {}"),
-                    format_args!($($arg)*), e);
-        }
-    })
-}
-
 fn mioco_logger() -> Logger {
     let decorator = slog_term::TermDecorator::new().build();
     let drain = slog_term::FullFormat::new(decorator).build().fuse();
-//        let drain = slog_async::Async::new(drain).build().fuse();
-
     let drain = std::sync::Mutex::new(drain).fuse();
     slog::Logger::root(drain, o!("mioco" => env!("CARGO_PKG_VERSION") ))
 }
-
-
-
-// }}}
 
 // {{{ Mioco
 lazy_static! {
