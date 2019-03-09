@@ -11,9 +11,9 @@ repository = "https://github.com/dpc/mioco"
 readme = "README.md"
 
 [dependencies]
-mio = "0.6.6"
+mio = "0.6"
 lazy_static = "*"
-num_cpus = "1.0.0"
+num_cpus = "*"
 context = "1"
 #slog = { version = "2", features = ["max_level_trace", "release_max_level_trace"] }
 slog = "2"
@@ -22,7 +22,7 @@ slog-async = "2"
 slab = "*"
 
 [dev-dependencies]
-env_logger = "0.3.2"
-httparse = "1.1.1"
-net2 = "0.2.26"
-rand = "0.3.14"
+env_logger = "0.6"
+httparse = "1"
+net2 = "0.2"
+rand = "0.6"

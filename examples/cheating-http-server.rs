@@ -19,7 +19,7 @@ Hello World\r
 \r";
 
 fn main() {
-    env_logger::init().unwrap();
+    env_logger::init();
     let addr = listend_addr();
 
     let listener = TcpListener::bind(&addr).unwrap();
