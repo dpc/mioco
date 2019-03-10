@@ -171,7 +171,9 @@ fn pop_transfer() -> context::Transfer {
 }
 
 fn co_switch_out() {
-    let t = pop_transfer().context.resume(0);
+    let t = unsafe {
+        pop_transfer().context.resume(0)
+    };
     save_transfer(t);
 }
 
@@ -194,7 +196,9 @@ extern "C" fn context_function(t: context::Transfer) -> ! {
             cell.borrow_mut().take().unwrap()
         };
 
-        let t = t.context.resume(0);
+        let t = unsafe {
+            t.context.resume(0)
+        };
 
         save_transfer(t);
 
@@ -202,7 +206,9 @@ extern "C" fn context_function(t: context::Transfer) -> ! {
     }
 
     loop {
-        save_transfer(pop_transfer().context.resume(1));
+        save_transfer(unsafe{
+            pop_transfer().context.resume(1)
+        });
     }
 }
 
@@ -233,8 +239,12 @@ impl Fiber {
 
         let stack = stack::ProtectedFixedSizeStack::default();
 
-        let context = context::Context::new(&stack, context_function);
-        let t = context.resume(&f as *const _ as usize);
+        let context = unsafe {
+            context::Context::new(&stack, context_function)
+        };
+        let t = unsafe {
+            context.resume(&f as *const _ as usize)
+        };
         debug_assert!(f.borrow().is_none());
 
         trace!(log, "fiber created");
@@ -248,7 +258,9 @@ impl Fiber {
     fn resume(&mut self, loop_id: LoopId, fiber_id: FiberId) {
         TL_LOOP_ID.with(|id| id.set(loop_id));
         TL_FIBER_ID.with(|id| id.set(fiber_id));
-        let t = self.cur_context.take().unwrap().resume(0);
+        let t = unsafe {
+            self.cur_context.take().unwrap().resume(0)
+        };
         self.cur_context = Some(t.context);
         TL_LOOP_ID.with(|id| id.set(TL_LOOP_ID_NONE));
         TL_FIBER_ID.with(|id| id.set(TL_FIBER_ID_NONE));

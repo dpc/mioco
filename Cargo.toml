@@ -14,7 +14,7 @@ readme = "README.md"
 mio = "0.6"
 lazy_static = "*"
 num_cpus = "*"
-context = "1"
+context = "2"
 #slog = { version = "2", features = ["max_level_trace", "release_max_level_trace"] }
 slog = "2"
 slog-term = "~2.0.0-4"
