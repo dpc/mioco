@@ -46,7 +46,7 @@ fn main() {
 
                             loop {
                                 let mut headers = [httparse::EMPTY_HEADER; 16];
-                                let len = try!(conn.read(&mut buf[buf_i..]));
+                                let len = conn.read(&mut buf[buf_i..])?;
 
                                 if len == 0 {
                                     return Ok(());
@@ -61,14 +61,14 @@ fn main() {
                                     let req_len = res.unwrap();
                                     match req.path {
                                         Some(ref _path) => {
-                                            let _ = try!(conn.write_all(&RESPONSE.as_bytes()));
+                                            let _ = conn.write_all(&RESPONSE.as_bytes())?;
                                             if req_len != buf_i {
                                                 // request has a body; TODO: handle it
                                             }
                                             buf_i = 0;
                                         }
                                         None => {
-                                            let _ = try!(conn.write_all(&RESPONSE_404.as_bytes()));
+                                            let _ = conn.write_all(&RESPONSE_404.as_bytes())?;
                                             return Ok(());
                                         }
                                     }

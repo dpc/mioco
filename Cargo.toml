@@ -9,6 +9,7 @@ documentation = "https://dpc.github.io/mioco/"
 homepage = "https://github.com/dpc/mioco"
 repository = "https://github.com/dpc/mioco"
 readme = "README.md"
+edition = "2018"
 
 [dependencies]
 mio = "0.6"

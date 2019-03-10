@@ -1,5 +1,5 @@
 use std::io as sio;
-use {in_coroutine, offload};
+use crate::{in_coroutine, offload};
 use std;
 use std::path::Path;
 

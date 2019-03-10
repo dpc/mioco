@@ -1,5 +1,5 @@
 use super::broadcast;
-use {in_coroutine};
+use crate::in_coroutine;
 
 use std::sync as ssync;
 use std::ops;

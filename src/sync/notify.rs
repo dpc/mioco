@@ -1,6 +1,6 @@
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, AtomicBool, Ordering};
-use {MIOCO, LoopMsg, FiberId, co_switch_out, TL_LOOP_ID, TL_FIBER_ID};
+use crate::{MIOCO, LoopMsg, FiberId, co_switch_out, TL_LOOP_ID, TL_FIBER_ID};
 use std;
 
 struct Shared {
