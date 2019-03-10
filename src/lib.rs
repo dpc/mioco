@@ -1,13 +1,7 @@
-extern crate mio;
 #[macro_use]
 extern crate lazy_static;
-extern crate context;
 #[macro_use]
 extern crate slog;
-extern crate slog_term;
-extern crate slog_async;
-extern crate slab;
-extern crate num_cpus;
 
 use slog::{Logger, Drain};
 
