@@ -13,25 +13,11 @@ struct SendBencher(*mut Bencher);
 // Don't judge me. -- dpc
 unsafe impl Send for SendBencher {}
 
-macro_rules! printerrln {
-    ($($arg:tt)*) => ({
-        use std::io::prelude::*;
-        if let Err(e) = writeln!(&mut ::std::io::stderr(), "{}",
-            format_args!($($arg)*)) {
-            panic!(concat!(
-                    "Failed to write to stderr.\n",
-                    "Original error output: {}\n",
-                    "Secondary error writing to stderr: {}"),
-                    format_args!($($arg)*), e);
-        }
-    })
-}
-
 //
 // WARNING!
 //
 // Some pieces here are very fragile and will short-circuit on
-// any spurious wakeup, eg. when previous task leaves wakup
+// any spurious wakeup, eg. when previous task leaves wakeup
 // call that was not received by `wait`.
 //
 
@@ -56,10 +42,9 @@ fn mpsc_pingpong(b: &mut Bencher) {
     let join2 = mioco::spawn(move || {
         let b = unsafe { &mut *b.0 };
         b.iter(|| {
-
-                   let x = rx2.recv().unwrap();
-                   tx1.send(x + 1).unwrap();
-               });
+            let x = rx2.recv().unwrap();
+            tx1.send(x + 1).unwrap();
+        });
     });
 
     join1.join().unwrap();
@@ -75,28 +60,27 @@ fn notify_pingpong(b: &mut Bencher) {
 
     let finished = Arc::new(AtomicBool::new(false));
     let join1 = mioco::spawn({
-                                 let finished = finished.clone();
-                                 move || {
-                                     while !finished.load(Ordering::SeqCst) {
-                                         rx1.reset();
-                                         tx2.notify();
-                                         rx1.wait();
-                                     }
-                                 }
-                             });
+        let finished = finished.clone();
+        move || {
+            while !finished.load(Ordering::SeqCst) {
+                rx1.reset();
+                tx2.notify();
+                rx1.wait();
+            }
+        }
+    });
 
     let join2 = mioco::spawn(move || {
         let b = unsafe { &mut *b.0 };
         b.iter(|| {
-                   rx2.wait();
-                   rx2.reset();
-                   tx1.notify();
-               });
+            rx2.wait();
+            rx2.reset();
+            tx1.notify();
+        });
         rx2.wait();
         finished.store(true, Ordering::SeqCst);
         tx1.notify();
     });
-
 
     join1.join().unwrap();
     join2.join().unwrap();
@@ -112,28 +96,27 @@ fn broadcast_pingpong(b: &mut Bencher) {
     let finished = Arc::new(AtomicBool::new(false));
 
     let join1 = mioco::spawn({
-                                 let finished = finished.clone();
-                                 move || {
-                                     while !finished.load(Ordering::SeqCst) {
-                                         rx1.reset();
-                                         tx2.notify();
-                                         rx1.wait();
-                                     }
-                                 }
-                             });
+        let finished = finished.clone();
+        move || {
+            while !finished.load(Ordering::SeqCst) {
+                rx1.reset();
+                tx2.notify();
+                rx1.wait();
+            }
+        }
+    });
 
     let join2 = mioco::spawn(move || {
         let b = unsafe { &mut *b.0 };
         b.iter(|| {
-                   rx2.wait();
-                   rx2.reset();
-                   tx1.notify();
-               });
+            rx2.wait();
+            rx2.reset();
+            tx1.notify();
+        });
         rx2.wait();
         finished.store(true, Ordering::SeqCst);
         tx1.notify();
     });
-
 
     join1.join().unwrap();
     join2.join().unwrap();
