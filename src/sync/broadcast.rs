@@ -1,7 +1,7 @@
 //! Broadcast allows waking up multiple receivers at once
 use std::sync::{Arc, Mutex};
 use std::sync::atomic::{AtomicUsize, Ordering};
-use {MIOCO, co_switch_out, get_cur_fullid, FullId};
+use crate::{MIOCO, co_switch_out, get_cur_fullid, FullId};
 use std::collections::HashSet;
 use std::mem;
 use std::cell::RefCell;

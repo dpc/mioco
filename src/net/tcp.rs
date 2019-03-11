@@ -33,7 +33,7 @@ impl TcpListener {
     }
 
     /// Creates a new TcpListener from an instance of a `std::net::TcpListener` type.
-    pub fn from_listener(listener: std::net::TcpListener, addr: &SocketAddr) -> io::Result<Self> {
+    pub fn from_listener(listener: std::net::TcpListener, _addr: &SocketAddr) -> io::Result<Self> {
         mio::tcp::TcpListener::from_std(listener).map(AsyncIO::new)
     }
 

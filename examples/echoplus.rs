@@ -29,19 +29,19 @@ fn main() {
     let _join = mioco::spawn(|| -> io::Result<()> {
         let addr = listend_addr();
 
-        let listener = try!(TcpListener::bind(&addr));
+        let listener = TcpListener::bind(&addr)?;
 
-        printerrln!("Starting tcp echo server on {:?}", try!(listener.local_addr()));
+        printerrln!("Starting tcp echo server on {:?}", listener.local_addr()?);
 
         loop {
-            let (mut conn, _addr) = try!(listener.accept());
+            let (mut conn, _addr) = listener.accept()?;
 
             let _join = mioco::spawn(move || -> io::Result<()> {
                 let mut buf = vec![0u8; 1024 * 64];
                 loop {
-                    let size = try!(conn.read(&mut buf));
+                    let size = conn.read(&mut buf)?;
                     if size == 0 {/* eof */ break; }
-                    let _ = try!(conn.write_all(&mut buf[0..size]));
+                    let _ = conn.write_all(&mut buf[0..size])?;
                 }
 
                 Ok(())

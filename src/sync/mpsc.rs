@@ -90,7 +90,7 @@ impl<T> Sender<T> {
     ///
     /// This is non-blocking operation.
     pub fn send(&self, t: T) -> Result<(), mpsc::SendError<T>> {
-        try!(self.tx.as_ref().unwrap().send(t));
+        self.tx.as_ref().unwrap().send(t)?;
         self.notif_tx.notify();
         Ok(())
     }
